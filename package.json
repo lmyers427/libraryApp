@@ -1,0 +1,23 @@
+{
+  "name": "csciprojectgroup1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lmyers427/CSCI441ProjectGroup1.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lmyers427/CSCI441ProjectGroup1/issues"
+  },
+  "homepage": "https://github.com/lmyers427/CSCI441ProjectGroup1#readme",
+  "dependencies": {
+    "mongoose": "^6.6.1"
+  }
+}
