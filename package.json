@@ -1,23 +1,40 @@
 {
+<<<<<<< HEAD
   "name": "csci441projectgroup1",
   "version": "1.0.0",
   "description": "Library Project",
   "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+=======
+  "name": "csciprojectgroup1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+>>>>>>> e6f697662540a71333b88abf7286af3ea3f5d507
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/lmyers427/CSCI441ProjectGroup1.git"
   },
+<<<<<<< HEAD
   "author": "Lauren Myers",
+=======
+  "author": "",
+>>>>>>> e6f697662540a71333b88abf7286af3ea3f5d507
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/lmyers427/CSCI441ProjectGroup1/issues"
   },
   "homepage": "https://github.com/lmyers427/CSCI441ProjectGroup1#readme",
   "dependencies": {
+<<<<<<< HEAD
     "dotenv": "^16.0.2",
+=======
+>>>>>>> e6f697662540a71333b88abf7286af3ea3f5d507
     "express": "^4.18.1",
     "mongoose": "^6.6.1"
   }
