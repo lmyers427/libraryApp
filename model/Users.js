@@ -12,14 +12,26 @@ const userSchema = new Schema({
             type: Number,
             default: 1001
         },
-        Admin: Number
+        Admin: Number,
     },
     password: {
         type: String,
         required: true
-    }
+    },
+    first_name: {
 
-    //continue template for user schema 
+        type:String
+    },
+    last_name: {
+        type: String
+    },
+    email: { 
+
+        work: {type: mongoose.SchemaTypes.Email, allowBlank: true},
+        personal: mongoose.SchemaTypes.Email
+         
+    }
+    //shelf: [mogoose.Schema]
 
 });
 
