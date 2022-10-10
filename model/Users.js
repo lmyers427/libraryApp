@@ -1,10 +1,12 @@
 const mongoose = require('mongoose');
+const bookSchema = require('../model/Books');
+
 const Schema = mongoose.Schema;
 
 const userSchema = new Schema({
     username: {
 
-        type: Sting,
+        type: String,
         required: true
     },
     roles: {
@@ -30,8 +32,8 @@ const userSchema = new Schema({
         work: {type: mongoose.SchemaTypes.Email, allowBlank: true},
         personal: mongoose.SchemaTypes.Email
          
-    }
-    //shelf: [mogoose.Schema]
+    },
+    bookshelf :[{type: Schema.Types.ObjectId, ref: "Books"}] //not 100% sure if this is correct will need to test
 
 });
 
