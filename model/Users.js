@@ -2,7 +2,6 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const userSchema = new Schema({
-
     username: {
 
         type: Sting,
@@ -20,6 +19,7 @@ const userSchema = new Schema({
         required: true
     }
 
+    //continue template for user schema 
 
 });
 
