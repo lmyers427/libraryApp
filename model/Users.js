@@ -1,10 +1,12 @@
 const mongoose = require('mongoose');
+const bookSchema = require('../model/Books');
+
 const Schema = mongoose.Schema;
 
 const userSchema = new Schema({
     username: {
 
-        type: Sting,
+        type: String,
         required: true
     },
     roles: {
@@ -25,13 +27,9 @@ const userSchema = new Schema({
     last_name: {
         type: String
     },
-    email: { 
-
-        work: {type: mongoose.SchemaTypes.Email, allowBlank: true},
-        personal: mongoose.SchemaTypes.Email
-         
-    }
-    //shelf: [mogoose.Schema]
+   
+    //references the books from Model Schema books One to Many 
+    bookshelf :[{type: Schema.Types.ObjectId, ref: "Book"}] 
 
 });
 
