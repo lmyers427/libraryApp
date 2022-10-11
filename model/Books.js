@@ -22,14 +22,14 @@ const bookSchema = new Schema({
     status: {
         rent: {
             availability: Boolean,
-            daysToRent: { Number, default: 30 },
+            daysToRent: Number,
             waitlist: Number,
         },
         buy: {
             
             price: Number
         },
-        owned: {
+        owner: {
             type: Schema.Types.ObjectId, ref: 'User'
         },
     },
