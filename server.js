@@ -11,6 +11,8 @@ const PORT = process.env.PORT || 3500;
 // connect to mongo database  
 connectDB();
 
+app.use('/', express.static(path.join(__dirname, '/styles')));
+
 app.get('/' , (req, res) => {
 
        res.sendFile(path.join(__dirname, 'views', 'index.html'));
