@@ -6,18 +6,23 @@ const app = express();
 const mongoose = require('mongoose');
 const connectDB = require('./config/dbConn');
 const PORT = process.env.PORT || 3500; 
+const bodyParser = require('body-parser');
 
 
 // connect to mongo database  
 connectDB();
 
+// Makes it easier to handle urlencoded form data
+app.use(bodyParser.urlencoded({limit: '10mb', extended: false }));
+
+
 //serve static files for css designs
-app.use('/', express.static(path.join(__dirname, '/styles')));
+app.use('/', express.static(path.join(__dirname, '/public')));
 
 
 //routes (root folder is currently the login route)
 app.use('/', require('./routes/root'));
-app.use('/home', require('./routes/home'));
+app.use('/login', require('./routes/login'));
 
 
 app.all('*', (req, res) => {
