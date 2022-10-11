@@ -27,13 +27,9 @@ const userSchema = new Schema({
     last_name: {
         type: String
     },
-    email: { 
-
-        work: {type: mongoose.SchemaTypes.Email, allowBlank: true},
-        personal: mongoose.SchemaTypes.Email
-         
-    },
-    bookshelf :[{type: Schema.Types.ObjectId, ref: "Books"}] //not 100% sure if this is correct will need to test
+   
+    //references the books from Model Schema books One to Many 
+    bookshelf :[{type: Schema.Types.ObjectId, ref: "Book"}] 
 
 });
 

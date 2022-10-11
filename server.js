@@ -15,7 +15,7 @@ connectDB();
 app.use('/', express.static(path.join(__dirname, '/styles')));
 
 
-//routes
+//routes (root folder is currently the login route)
 app.use('/', require('./routes/root'));
 app.use('/home', require('./routes/home'));
 
