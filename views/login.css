@@ -1,7 +1,7 @@
 /* h1 is hard coded to test Home page and 404, will change*/
 h1{
     position: fixed;
-    top: 45%;
+    top: 30%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
