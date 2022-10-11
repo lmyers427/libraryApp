@@ -1,4 +1,4 @@
-let bookshelfDiv = document.getElementById('bookshelf');
+//let bookshelfDiv = document.getElementById('bookshelf');
 
 
 

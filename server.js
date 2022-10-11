@@ -2,7 +2,7 @@ require('dotenv').config();
 const express = require('express'); 
 const path = require('path');
 const cors = require('cors');
-const app = require('');
+const app = express();
 const mongoose = require('mongoose');
 const connectDB = require('./config/dbConn');
 const PORT = process.env.PORT || 3500; 
@@ -10,6 +10,12 @@ const PORT = process.env.PORT || 3500;
 
 // connect to mongo database  
 connectDB();
+
+app.get('/' , (req, res) => {
+
+       res.send('Hello World!'); 
+
+});
 
 //Listen only if MongoDB connects
 mongoose.connection.once('open', () => {
