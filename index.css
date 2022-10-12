@@ -1,0 +1,90 @@
+.bookshelf{
+    height: 600px;
+    width:400px;
+    border-radius: 5px;
+    background-color: #967969;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 5px 5px 5px #5C4033;
+}
+
+/*Position username text over username field*/
+.username{
+    position: fixed;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/*Position password text over username field*/
+.password{
+    position: fixed;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+  
+/* Position username field */
+input[type=text] {
+position: fixed;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+}
+
+/* Positions password field*/
+input[type=password]{
+position: fixed;
+top: 60%;
+left: 50%;
+transform: translate(-50%, -50%);
+}
+
+/* Set a style for all buttons */
+button {
+position: fixed;
+top: 70%;
+left: 50%;
+transform: translate(-50%, -60%);
+border: none;
+cursor: pointer;
+}
+
+
+/* Extra style for the cancel button (red) */
+.cancelbtn {
+width: auto;
+padding: 10px 18px;
+background-color: green
+;
+}
+
+.remember{
+    position: fixed;
+    top: 64%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+/* The "Forgot password" text */
+span.psw {
+position: fixed;
+top: 80%;
+left: 50%;
+transform: translate(-50%, -50%);
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 500px) {
+span.psw {
+    display: block;
+    float: none;
+}
+.cancelbtn {
+    width: 100%;
+}
+}
