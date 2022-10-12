@@ -6,7 +6,6 @@ h1{
     transform: translate(-50%, -50%);
 }
 
-
 .bookshelf{
     height: 600px;
     width:400px;
@@ -17,6 +16,14 @@ h1{
     left: 50%;
     transform: translate(-50%, -50%);
     box-shadow: 5px 5px 5px #5C4033;
+}
+
+.signIn{
+    font-size: 40px;
+    position: fixed;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 /*Position username text over username field*/
@@ -87,12 +94,26 @@ left: 50%;
 transform: translate(-50%, -50%);
 }
 
+/*The "new user" text */
+span.newacct {
+    position: fixed;
+    top: 85%;
+    left: 50%; 
+    transform: translate(-50%, -50%);
+}
+
 /* Change styles for span and cancel button on extra small screens */
 @media screen and (max-width: 500px) {
 span.psw {
     display: block;
     float: none;
 }
+
+span.newacct {
+    display: block;
+    float: none;
+}
+
 .cancelbtn {
     width: 100%;
 }
