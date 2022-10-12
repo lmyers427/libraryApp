@@ -10,8 +10,8 @@ const ExistingUser = async (req, res) => {
 
     if(!existingUname) return res.redirect('/register');
 
-    if(existingUname.password === pwd) return res.redirect('./home');
+    if(!existingUname.password === pwd) return res.status(400).json({'message' : 'Login denied, password does not match'});
 
-
+    //add code for if successful login 
 
 }
