@@ -18,7 +18,10 @@ const NewUser = async (req, res) => {
         //create user
         const result = await User.create({
             "username": uname,
-            "password": hashedPwd
+            "password": hashedPwd,
+            "email": req.body.email,
+            "first_name": req.body.fname,
+            "last_name": req.body.lname
 
         });
 
