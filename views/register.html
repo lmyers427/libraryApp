@@ -6,7 +6,7 @@
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Group 1</title>
-    <link rel="stylesheet" type="text/css" href="/css/login.css" />
+    <link rel="stylesheet" type="text/css" href="/css/register.css" />
    
 </head>
 <body>
@@ -14,6 +14,7 @@
     <div class = "bookshelf"></div>
 
     <h1>Burns and Mobile</h1>
+    <h3>Create an Account</h3>
 
     <form action="/register" method="POST">
         <div class="username">
@@ -26,6 +27,22 @@
         </div>
         <input type="password" id="password" placeholder="Enter Password" name="psw" required>
 
+        <div class="email">
+        <label for="email"><b>Email</b></label>   
+        </div>
+        <input type="email" id="email" placeholder="Enter Email (optional)" name="email">
+
+        <div class="fname">
+        <label for="fname"><b>First Name</b></label>   
+        </div>
+        <input type="fname" id="fname" placeholder="Enter First Name (optional)" name="fname">
+    
+        <div class="lname">
+        <label for="lname"><b>Last Name</b></label>   
+        </div>
+        <input type="lname" id="lname" placeholder="Enter Last Name (optional)" name="lname">
+        
+
         <label class="remember">
         <input type="checkbox" checked="checked" name="remember"> Remember me
         </label>
@@ -33,8 +50,8 @@
         <button type="button" class="cancelbtn">Submit</button>
 
         
-        <span class="psw"><a href="#">Forgot password?</a></span>
-        <span class="register"><a href="register">Sign Up</a></span>
+        <span class="psw"><a href="login">Login</a></span>
+
 
     </form>
         

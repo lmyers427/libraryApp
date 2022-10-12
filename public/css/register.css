@@ -6,6 +6,14 @@ h1{
     transform: translate(-50%, -50%);
 }
 
+h3{
+    color: white;
+    position: fixed;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
 
 .bookshelf{
     height: 600px;
@@ -22,7 +30,7 @@ h1{
 /*Position username text over username field*/
 .username{
     position: fixed;
-    top: 45%;
+    top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
@@ -30,16 +38,42 @@ h1{
 /*Position password text over username field*/
 .password{
     position: fixed;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/*Position email text over password field*/
+.email{
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/*Position fname text over email field*/
+.fname{
+
+    position: fixed;
     top: 55%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
 
+/*Position fname text over email field*/
+.lname{
+
+    position: fixed;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
   
 /* Position username field */
 input[type=text] {
 position: fixed;
-top: 50%;
+top: 42%;
 left: 50%;
 transform: translate(-50%, -50%);
 }
@@ -47,11 +81,35 @@ transform: translate(-50%, -50%);
 /* Positions password field*/
 input[type=password]{
 position: fixed;
-top: 60%;
+top: 47%;
 left: 50%;
 transform: translate(-50%, -50%);
 }
 
+
+/* Positions email field*/
+input[type=email]{
+    position: fixed;
+    top: 52%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    }
+
+/* Positions email field*/
+input[type=fname]{
+    position: fixed;
+    top: 57%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    }
+
+/* Positions email field*/
+input[type=lname]{
+    position: fixed;
+    top: 62%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    }
 /* Set a style for all buttons */
 button {
 position: fixed;
@@ -73,7 +131,7 @@ background-color: green
 
 .remember{
     position: fixed;
-    top: 64%;
+    top: 65%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
@@ -82,28 +140,14 @@ background-color: green
 /* The "Forgot password" text */
 span.psw {
 position: fixed;
-top: 75%;
+top: 80%;
 left: 50%;
 transform: translate(-50%, -50%);
 }
 
-span.register {
-
-    position: fixed;
-    top: 80%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    }
-
 /* Change styles for span and cancel button on extra small screens */
 @media screen and (max-width: 500px) {
 span.psw {
-    display: block;
-    float: none;
-}
-
-span.register {
-
     display: block;
     float: none;
 }
