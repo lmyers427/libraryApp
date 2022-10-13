@@ -6,24 +6,26 @@
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Group 1</title>
-    <link rel="stylesheet" type="text/css" href="index.css" />
+    <link rel="stylesheet" type="text/css" href="/css/login.css" />
    
 </head>
 <body>
+
     <div class = "bookshelf"></div>
 
     <div class = "signIn">Sign In</div>
+    <h1>Burns and Mobile</h1>
 
-    <form action="action_page.php" method="post">
+    <form action="/register" method="POST">
         <div class="username">
             <label for="uname"><b>Username</b></label>
         </div>
-            <input type="text" placeholder="Enter Username" name="uname" required>
+            <input type="text" id="username" placeholder="Enter Username" name="uname" required>
         
         <div class="password">
         <label for="psw"><b>Password</b></label>
         </div>
-        <input type="password" placeholder="Enter Password" name="psw" required>
+        <input type="password" id="password" placeholder="Enter Password" name="psw" required>
 
         <label class="remember">
         <input type="checkbox" checked="checked" name="remember"> Remember me
@@ -33,8 +35,10 @@
 
         
         <span class="psw"><a href="#">Forgot password?</a></span>
-        <span class="newacct"><a href ="userRegistration"> New user? Click here to create an account</a></span>
-        
+
+        <span class="register"><a href="register">Sign Up</a></span>
+
     </form>
+        
 </body>
 </html>
