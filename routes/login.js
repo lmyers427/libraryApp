@@ -4,14 +4,11 @@ const path = require('path');
 const loginController = require('../controllers/loginController');
 
 router.get('/', (req, res) => {
+    console.log("This is the get login router");
     res.sendFile(path.join(__dirname, '..', 'views', 'login.html'));
+    
 });
 
-//Validate existing user
-router.get('/', (req, res) =>{
-
-    loginController.ExistingUser
-    
-    });
+router.post('/', loginController.ExistingUser);
 
 module.exports = router;

@@ -37,3 +37,8 @@ const NewUser = async (req, res) => {
 
 
 }
+
+module.exports = {
+
+    NewUser
+}
