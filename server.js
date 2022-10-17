@@ -10,6 +10,7 @@ const bodyParser = require('body-parser');
 const test = require('./controllers/loginController');
 const session = require('express-session');
 
+
 // connect to mongo database  
 connectDB();
 
@@ -29,6 +30,14 @@ app.use('/', express.static(path.join(__dirname, '/public')));
 app.use('/', require('./routes/root'));
 app.use('/login', require('./routes/login'));
 app.use('/register', require('./routes/register'));
+
+
+/*
+Added for view engine EJS
+*/
+app.set("views", path.join(__dirname, "views"));
+app.set("view engine", "ejs");
+
 
 app.all('*', (req, res) => {
     res.status(404);

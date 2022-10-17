@@ -4,8 +4,8 @@ const path = require('path');
 const loginController = require('../controllers/loginController');
 
 router.get('/', (req, res) => {
-    console.log("This is the get login router");
-    res.render(path.join(__dirname, '..', 'views', 'login')); //with ejs updated to render
+    let message = req.session.message;
+    res.render(path.join(__dirname, '..', 'views', 'login'), {message: message}); //with ejs updated to render
     
 });
 

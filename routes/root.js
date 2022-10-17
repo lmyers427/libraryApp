@@ -3,7 +3,7 @@ const router = express.Router();
 const path = require('path');
 
 router.get('^/$|/home(.html)?', (req, res) => {
-    const message = req.session.message;
+    let message = req.session.message;
     res.render(path.join(__dirname, '..', 'views', 'home'), {message: message}); //updated for ejs
 });
 

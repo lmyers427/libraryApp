@@ -13,6 +13,7 @@
     <div class = "bookshelf"></div>
 
     <h1>Burns and Mobile</h1>
+    <h3><%=message%></h3>
 
 
     <form action="/login" method="POST" id="auth_form">
@@ -38,30 +39,5 @@
     <span class="psw"><a href="#">Forgot password?</a></span>
     <span class="register"><a href="register">Sign Up</a></span>
 
-        <!-- <script>
-
-            const form = document.getElementById('auth_form')
-            form.addEventListener('submit', validateUser)
-
-           async function validateUser(event) {
-                event.preventDefault();
-                const username = document.getElementById('uname').value
-                const password = document.getElementById('psw').value
-
-                const result = await fetch('/login', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({
-                        username,
-                        password
-                    })
-                
-
-                })//.then((res) => res.json('/register'));
-            }
-
-        </script> -->
 </body>
 </html>
