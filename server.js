@@ -8,7 +8,7 @@ const connectDB = require('./config/dbConn');
 const PORT = process.env.PORT || 3500; 
 const bodyParser = require('body-parser');
 const test = require('./controllers/loginController');
-
+const session = require('express-session');
 
 // connect to mongo database  
 connectDB();
@@ -18,7 +18,8 @@ app.use(bodyParser.urlencoded({extended: false }));
 app.use(bodyParser.json());
 
 
-
+//set and configure session variable
+app.use(session({secret: 'mySecret', resave: false, saveUninitialized: false}));
 
 //serve static files for css designs
 app.use('/', express.static(path.join(__dirname, '/public')));

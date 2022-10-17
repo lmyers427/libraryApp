@@ -15,16 +15,16 @@
     <h1>Burns and Mobile</h1>
 
 
-    <form id="auth_form">
+    <form action="/login" method="POST" id="auth_form">
         <div class="username">
             <label for="uname"><b>Username</b></label>
         </div>
-            <input type="text" id="uname" placeholder="Enter Username" name="uname" required>
+            <input type="text" id="username" placeholder="Enter Username" name="username" required>
         
         <div class="password">
         <label for="psw"><b>Password</b></label>
         </div>
-        <input type="password" id="psw"  placeholder="Enter Password" name="psw" required>
+        <input type="password" id="password"  placeholder="Enter Password" name="password" required>
 
         <label class="remember">
         <input type="checkbox" checked="checked" name="remember"> Remember me
@@ -38,7 +38,7 @@
     <span class="psw"><a href="#">Forgot password?</a></span>
     <span class="register"><a href="register">Sign Up</a></span>
 
-        <script>
+        <!-- <script>
 
             const form = document.getElementById('auth_form')
             form.addEventListener('submit', validateUser)
@@ -59,9 +59,9 @@
                     })
                 
 
-                }).then((res) => res.json())
+                })//.then((res) => res.json('/register'));
             }
 
-        </script>
+        </script> -->
 </body>
 </html>

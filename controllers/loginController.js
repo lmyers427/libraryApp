@@ -1,5 +1,8 @@
 const User = require('../model/Users');
 const bcrypt = require('bcrypt');
+const express = require('express');
+const app = express();
+
 
 
 const ExistingUser = async (req, res) => {
@@ -10,17 +13,20 @@ const ExistingUser = async (req, res) => {
 
     const existingUname = await User.findOne({username: username}).exec();
 
-    if(!existingUname) return res.status(400).json({'message':'user does not exist'});//Reload-HTML page with Error Message
+    if(!existingUname) return res.redirect('/register');
 
-    if(!(existingUname.password === password)) return res.status(400).json({'message':'password is incorrect'});//Reload-HTML page with Error Message
+    if (!(existingUname.password === password)) return res.status(400).json({'message':'password is incorrect'});//Reload-HTML page with Error Message
 
     
     //need to add response for when Login is Successful
+    //return res.redirect('/', );
 
-    
-    //res.status(201).json( {'message' : `successful match found for user ${existingUname.username}`});
-   // add code for if successful login 
+    //testing session variable
+    function testSend(req, res) {
+        req.session.message = 'login Successful';
+        res.redirect('/');
 
+    };
 }
 
 
