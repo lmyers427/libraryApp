@@ -4,7 +4,8 @@ const path = require('path');
 const registerController = require('../controllers/registerController');
 
 router.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, '..', 'views', 'register.html'));
+    let message = req.session.message;
+    res.render(path.join(__dirname, '..', 'views', 'register'), {message: message} ); //ejs updated to render
 });
 
 //Register new 

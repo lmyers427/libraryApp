@@ -6,6 +6,13 @@ h1{
     transform: translate(-50%, -50%);
 }
 
+h3{
+    color: red;
+    position: fixed;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
 
 .bookshelf{
     height: 600px;
