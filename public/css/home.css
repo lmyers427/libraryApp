@@ -25,13 +25,6 @@ span.psw {
     transform: translate(-50%, -50%);
     }
 
-    span.register {
-
-        position: fixed;
-        top: 85%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        }
     
 /* Change styles for span and cancel button on extra small screens */
 @media screen and (max-width: 500px) {

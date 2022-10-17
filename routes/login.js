@@ -1,17 +1,14 @@
 const express = require('express');
 const router = express.Router();
 const path = require('path');
-const registerController = require('../controllers/registerController');
+const loginController = require('../controllers/loginController');
 
 router.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, '..', 'views', 'login.html'));
+    let message = req.session.message;
+    res.render(path.join(__dirname, '..', 'views', 'login'), {message: message}); //with ejs updated to render
+    
 });
 
-//Register new 
-router.post('/', (req, res) =>{
-
-    registerController.NewUser
-    
-    });
+router.post('/', loginController.ExistingUser);
 
 module.exports = router;
