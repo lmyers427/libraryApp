@@ -1,7 +1,15 @@
 /* h1 is hard coded to test Home page and 404, will change*/
 h1{
     position: fixed;
-    top: 30%;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+h3{
+    color: white;
+    position: fixed;
+    top: 25%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
@@ -16,14 +24,6 @@ h1{
     left: 50%;
     transform: translate(-50%, -50%);
     box-shadow: 5px 5px 5px #5C4033;
-}
-
-.signIn{
-    font-size: 40px;
-    position: fixed;
-    top: 25%;
-    left: 50%;
-    transform: translate(-50%, -50%);
 }
 
 /*Position username text over username field*/

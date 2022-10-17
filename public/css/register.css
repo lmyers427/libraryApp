@@ -1,7 +1,7 @@
 /* h1 is hard coded to test Home page and 404, will change*/
 h1{
     position: fixed;
-    top: 30%;
+    top: 15%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
@@ -9,7 +9,7 @@ h1{
 h3{
     color: white;
     position: fixed;
-    top: 35%;
+    top: 25%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
@@ -30,7 +30,7 @@ h3{
 /*Position username text over username field*/
 .username{
     position: fixed;
-    top: 40%;
+    top: 35%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
@@ -38,7 +38,7 @@ h3{
 /*Position password text over username field*/
 .password{
     position: fixed;
-    top: 45%;
+    top: 42%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
@@ -47,7 +47,7 @@ h3{
 .email{
 
     position: fixed;
-    top: 50%;
+    top: 49%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
@@ -56,7 +56,7 @@ h3{
 .fname{
 
     position: fixed;
-    top: 55%;
+    top: 56%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
@@ -65,7 +65,7 @@ h3{
 .lname{
 
     position: fixed;
-    top: 60%;
+    top: 63%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
@@ -73,7 +73,7 @@ h3{
 /* Position username field */
 input[type=text] {
 position: fixed;
-top: 42%;
+top: 38%;
 left: 50%;
 transform: translate(-50%, -50%);
 }
@@ -81,7 +81,7 @@ transform: translate(-50%, -50%);
 /* Positions password field*/
 input[type=password]{
 position: fixed;
-top: 47%;
+top: 45%;
 left: 50%;
 transform: translate(-50%, -50%);
 }
@@ -98,7 +98,7 @@ input[type=email]{
 /* Positions email field*/
 input[type=fname]{
     position: fixed;
-    top: 57%;
+    top: 59%;
     left: 50%;
     transform: translate(-50%, -50%);
     }
@@ -106,14 +106,14 @@ input[type=fname]{
 /* Positions email field*/
 input[type=lname]{
     position: fixed;
-    top: 62%;
+    top: 66%;
     left: 50%;
     transform: translate(-50%, -50%);
     }
 /* Set a style for all buttons */
 button {
 position: fixed;
-top: 70%;
+top: 76%;
 left: 50%;
 transform: translate(-50%, -60%);
 border: none;
@@ -131,7 +131,7 @@ background-color: green
 
 .remember{
     position: fixed;
-    top: 65%;
+    top: 70%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
@@ -140,7 +140,7 @@ background-color: green
 /* The "Forgot password" text */
 span.psw {
 position: fixed;
-top: 80%;
+top: 81%;
 left: 50%;
 transform: translate(-50%, -50%);
 }

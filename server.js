@@ -26,6 +26,7 @@ app.use('/login', require('./routes/login'));
 app.use('/register', require('./routes/register'));
 
 
+
 app.all('*', (req, res) => {
     res.status(404);
     if (req.accepts('html')) {
