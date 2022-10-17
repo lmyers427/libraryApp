@@ -15,7 +15,7 @@ const ExistingUser = async (req, res) => {
     //if User does not exist
     if(!existingUname) return res.render('../views/register.ejs', { message: req.session.message = 'Username Not Found' });
 
-    if(!(existingUname.password === password)) return res.render('../views/login.ejs', { message: req.session.message =  `${existingUname.username} incorrect password` });
+    if(!(existingUname.password === password)) return res.render('../views/login.ejs', { message: req.session.message =  `Incorrect password` });
 
 
 
