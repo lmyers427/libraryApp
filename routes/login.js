@@ -5,7 +5,7 @@ const loginController = require('../controllers/loginController');
 
 router.get('/', (req, res) => {
     console.log("This is the get login router");
-    res.sendFile(path.join(__dirname, '..', 'views', 'login.html'));
+    res.render(path.join(__dirname, '..', 'views', 'login')); //with ejs updated to render
     
 });
 
