@@ -1,15 +1,15 @@
 /* h1 is hard coded to test Home page and 404, will change*/
 h1{
     position: fixed;
-    top: 30%;
+    top: 15%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
 
 h3{
-    color: red;
+    color: white;
     position: fixed;
-    top: 35%;
+    top: 25%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
@@ -94,6 +94,13 @@ left: 50%;
 transform: translate(-50%, -50%);
 }
 
+/*The "new user" text */
+span.newacct {
+    position: fixed;
+    top: 85%;
+    left: 50%; 
+    transform: translate(-50%, -50%);
+}
 span.register {
 
     position: fixed;
@@ -105,6 +112,11 @@ span.register {
 /* Change styles for span and cancel button on extra small screens */
 @media screen and (max-width: 500px) {
 span.psw {
+    display: block;
+    float: none;
+}
+
+span.newacct {
     display: block;
     float: none;
 }
