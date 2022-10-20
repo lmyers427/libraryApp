@@ -17,7 +17,7 @@
     <h1>Burns and Mobile</h1>
     <h3><%= message %> <br> Create an Account</h3>
 
-    <form action="/register" method="POST">
+    <form action="/register" method="POST" id="create_user">
         <div class="username">
             <label for="uname"><b>Username</b></label>
         </div>
@@ -48,7 +48,7 @@
         <input type="checkbox" checked="checked" name="remember"> Remember me
         </label>
 
-        <button type="button" class="cancelbtn">Submit</button>
+        <button type="submit" class="cancelbtn">Submit</button>
 
         
         <span class="psw"><a href="login">Login</a></span>
