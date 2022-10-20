@@ -3,32 +3,37 @@ const bcrypt = require('bcrypt');
 
 const NewUser = async (req, res) => {
 
-    const {uname, pwd} = req.body; //may change depending on HTML
-    if(!uname || !pwd) return res.status(400).json({'message':'Username and password required'});
+    const {username, password} = req.body; //may change depending on HTML
+    if(!username || !password) return res.status(400).json({'message':'Username and password required'});
 
-    const duplicate = await User.findOne({username: uname}).exec();
+    const duplicate = await User.findOne({username: username}).exec();
 
 
-    if(duplicate) return res.redirect(301, /*have to put something here not sure what?*/); //redirect to login page
+    if(duplicate) return res.render('../views/login.ejs', { message: req.session.message = 'Username Already Exists' });
 
     try{
 
-        const hashedPwd = await bcrypt.hash(pwd, 10); //encrypts password
+        // //create user
+        // const result = await User.create({
+        //     "username": username,
+        //     "password": password,
+        //     "email": req.body.email,
+        //     "first_name": req.body.fname,
+        //     "last_name": req.body.lname
 
-        //create user
-        const result = await User.create({
-            "username": uname,
-            "password": hashedPwd,
-            "email": req.body.email,
-            "first_name": req.body.fname,
-            "last_name": req.body.lname
+        // });
+        //test out before posting to Database :)
 
-        });
+        const newUser = new User();
+        newUser.username = username;
+        newUser.password = password;
+        newUser.email = req.body.email;
+        newUser.first_name = req.body.fname;
+        newUser.last_name = req.body.lname;
+        const result = await newUser.save();
 
-        console.log(result); //logs result to console
-
-        res.status(201).json({'success': `New user ${uname} created!`});
-
+        res.render('../views/login.ejs', {message: req.session.message = 'User successfully created. Please Login'});
+    
     }catch(error){
 
         res.status(500)
