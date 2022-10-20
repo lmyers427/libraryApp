@@ -8,11 +8,8 @@ router.get('/', (req, res) => {
     res.render(path.join(__dirname, '..', 'views', 'register'), {message: message} ); //ejs updated to render
 });
 
-//Register new 
-router.post('/', (req, res) =>{
+//Register new user
+router.post('/', registerController.NewUser);
 
-    registerController.NewUser
-    
-    });
 
 module.exports = router;
