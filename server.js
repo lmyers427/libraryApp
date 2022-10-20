@@ -31,6 +31,8 @@ app.use('/', require('./routes/root'));
 app.use('/login', require('./routes/login'));
 app.use('/register', require('./routes/register'));
 app.use('/logout', require('./routes/logout'));
+app.set("views", path.join(__dirname, "views"));
+app.set("view engine", "ejs");
 
 
 
