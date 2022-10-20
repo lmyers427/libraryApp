@@ -26,6 +26,7 @@ const ExistingUser = async (req, res) => {
     //If Login is successful
     
         req.session.message =  `${existingUname.username}`;
+        req.session.user = existingUname.username;
         res.render('../views/home.ejs', { message: req.session.message });
 
        
