@@ -14,18 +14,18 @@
     <div class = "bookshelf"></div>
 
     <h1>Burns and Mobile</h1>
-    <h3>Create an Account</h3>
+    <h3><%= message %> <br> Create an Account</h3>
 
     <form action="/register" method="POST">
         <div class="username">
             <label for="uname"><b>Username</b></label>
         </div>
-            <input type="text" id="username" placeholder="Enter Username" name="uname" required>
+            <input type="text" id="username" placeholder="Enter Username" name="username" required>
         
         <div class="password">
         <label for="psw"><b>Password</b></label>
         </div>
-        <input type="password" id="password" placeholder="Enter Password" name="psw" required>
+        <input type="password" id="password" placeholder="Enter Password" name="password" required>
 
         <div class="email">
         <label for="email"><b>Email</b></label>   
@@ -54,6 +54,6 @@
 
 
     </form>
-        
+    
 </body>
 </html>
