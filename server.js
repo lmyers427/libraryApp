@@ -43,9 +43,9 @@ app.set("view engine", "ejs");
 app.all('*', (req, res) => {
     res.status(404);
     if (req.accepts('html')) {
-       res.render(path.join(__dirname, 'views', '404.ejs'));
+        res.render(path.join(__dirname, 'views', '404.ejs'));
     } else if (req.accepts('json')) {
-       res.json({ "error": "404 Not Found" });
+        res.json({ "error": "404 Not Found" });
     } else {
         res.type('txt').send("404 Not Found");
     }
