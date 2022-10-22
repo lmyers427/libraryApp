@@ -8,12 +8,12 @@ router.route('/')
     .get(employeesController.getAllBooks)
     .post(verifyRoles(ROLES_LIST.Admin, ROLES_LIST.Editor), booksController.createNewBook)
     .put(verifyRoles(ROLES_LIST.Admin, ROLES_LIST.Editor), booksController.updateBook)
-    .delete(verifyRoles(ROLES_LIST.Admin), employeesController.deleteBook);
+    .delete(verifyRoles(ROLES_LIST.Admin), booksController.deleteBook);
 
 router.route('/:id')
-    .get(employeesController.getBook);
+    .get(booksController.getBook);
 
-router.route('/:id')
-    .get(employeesController.getBook);
+router.route('/:title')
+    .get(booksController.getBook);
 
 module.exports = router;
