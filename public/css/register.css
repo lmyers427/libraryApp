@@ -1,21 +1,24 @@
-/* h1 is hard coded to test Home page and 404, will change*/
+/* Burns and Mobile Label */
 h1{
     position: fixed;
-    top: 30%;
-    left: 50%;
+    font-weight: bolder;
+    font-size: 38px;
+    top: 18%;
+    left: 52%;
     transform: translate(-50%, -50%);
 }
 
+/*Create User Label*/
 h3{
-    color: white;
+    color: rgb(241, 245, 16);;
     position: fixed;
     top: 35%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
 
-
-.bookshelf{
+/* Creates Bookshelf background */
+.bookshelf, .spine{
     height: 600px;
     width:400px;
     border-radius: 5px;
@@ -27,7 +30,20 @@ h3{
     box-shadow: 5px 5px 5px #5C4033;
 }
 
-/*Position username text over username field*/
+/* Blue spine on the book */
+/*.spine{
+    height: 600px;
+    width: 40px;
+    border-radius: 5px 0px 0px 5px;
+    background-color: #510ddb;
+    position:fixed;
+    top: 50%;
+    left: 25%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0px 2px 0px #5C4033;
+}*/
+
+/*Positions username text over username field*/
 .username{
     position: fixed;
     top: 40%;
@@ -35,7 +51,7 @@ h3{
     transform: translate(-50%, -50%);
 }
 
-/*Position password text over username field*/
+/*Positions password text over password field*/
 .password{
     position: fixed;
     top: 45%;
@@ -43,7 +59,7 @@ h3{
     transform: translate(-50%, -50%);
 }
 
-/*Position email text over password field*/
+/*Positions email text over email field*/
 .email{
 
     position: fixed;
@@ -52,7 +68,7 @@ h3{
     transform: translate(-50%, -50%);
 }
 
-/*Position fname text over email field*/
+/*Position first name text over first name field*/
 .fname{
 
     position: fixed;
@@ -61,7 +77,7 @@ h3{
     transform: translate(-50%, -50%);
 }
 
-/*Position fname text over email field*/
+/*Position last name text over last name field*/
 .lname{
 
     position: fixed;
@@ -70,7 +86,7 @@ h3{
     transform: translate(-50%, -50%);
 }
   
-/* Position username field */
+/* Positions username field */
 input[type=text] {
 position: fixed;
 top: 42%;
@@ -90,12 +106,12 @@ transform: translate(-50%, -50%);
 /* Positions email field*/
 input[type=email]{
     position: fixed;
-    top: 52%;
-    left: 50%;
+    top: 53%;
+    left: 52%;
     transform: translate(-50%, -50%);
     }
 
-/* Positions email field*/
+/* Positions first name field*/
 input[type=fname]{
     position: fixed;
     top: 57%;
@@ -103,29 +119,39 @@ input[type=fname]{
     transform: translate(-50%, -50%);
     }
 
-/* Positions email field*/
+/* Positions last name field*/
 input[type=lname]{
     position: fixed;
     top: 62%;
     left: 50%;
     transform: translate(-50%, -50%);
     }
+
 /* Set a style for all buttons */
 button {
 position: fixed;
 top: 70%;
 left: 50%;
 transform: translate(-50%, -60%);
+border-radius: 30px;
 border: none;
 cursor: pointer;
-}
-
-
-/* Extra style for the cancel button (red) */
-.cancelbtn {
 width: auto;
 padding: 10px 18px;
-background-color: green
+background-color: rgb(94, 172, 94)
+}
+
+/* Link Styles */
+a:link{text-decoration: none;}
+a:visited{text-decoration: none;}
+a:hover{text-decoration: underline;}
+
+
+/* Extra style for the submit button */
+.submitbtn {
+width: auto;
+padding: 10px 18px;
+background-color: rgb(94, 172, 94)
 ;
 }
 
@@ -137,7 +163,7 @@ background-color: green
 }
 
 
-/* The "Forgot password" text */
+/* Login Text */
 span.psw {
 position: fixed;
 top: 80%;
@@ -145,7 +171,7 @@ left: 50%;
 transform: translate(-50%, -50%);
 }
 
-/* Change styles for span and cancel button on extra small screens */
+/* Change styles for span and submit button on extra small screens */
 @media screen and (max-width: 500px) {
 span.psw {
     display: block;

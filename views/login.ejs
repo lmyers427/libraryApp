@@ -1,16 +1,19 @@
+<!-- This page is the default page for user login --> 
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Group 1</title>
+    <title>Group 1</title>
     <link rel="stylesheet" type="text/css" href="/css/login.css" />
 </head>
 <body>
 
     <div class = "bookshelf"></div>
+    <div class = "spine"></div>
 
     <h1>Burns and Mobile</h1>
     <h3><%=message%></h3>
@@ -27,11 +30,7 @@
         </div>
         <input type="password" id="password"  placeholder="Enter Password" name="password" required>
 
-        <label class="remember">
-        <input type="checkbox" checked="checked" name="remember"> Remember me
-        </label>
-
-        <button type="submit" class="cancelbtn">Submit</button>
+        <button type="submit" class="submitbtn">Submit</button>
         
 
     </form>
@@ -40,4 +39,8 @@
     <span class="register"><a href="register">Sign Up</a></span>
 
 </body>
+
+<footer>
+    <a href="support.html">Support</a>
+</footer>
 </html>
