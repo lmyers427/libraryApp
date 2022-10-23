@@ -1,7 +1,6 @@
 const Book = require('../model/Books');
 const bcrypt = require('bcrypt');
 
-
 const createNewBook = async (req, res) => {
 
     const duplicate = await Book.findOne({title: req.body.title}).exec();
@@ -24,9 +23,14 @@ const createNewBook = async (req, res) => {
         newBook.title = req.body.title;
         newBook.author = req.body.author;
         newBook.summary = req.body.summary;
-        newBook.status = req.body.status;
-        res.status(201).json(newBook);
+       // newBook.status = req.body.status;
+
+        //console.log(newBook);
         const result = await newBook.save();
+
+        
+        res.render('../views/home.ejs', {message: req.session.message = 'Book Successfully Added'});
+    
         
     }catch(error){
 

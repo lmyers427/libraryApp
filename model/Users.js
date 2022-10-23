@@ -15,8 +15,8 @@ const userSchema = new Schema({
             type: Number,
             default: 1001
         },
-        Admin: 7777,
-        Editor: 3434
+        Admin: Number,
+        Editor: Number
     },
     password: {
         type: String,
