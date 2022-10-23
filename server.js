@@ -31,17 +31,22 @@ app.use('/', require('./routes/root'));
 app.use('/login', require('./routes/login'));
 app.use('/register', require('./routes/register'));
 app.use('/logout', require('./routes/logout'));
+app.use('/books', require('./routes/books'));
+/*
+Added for view engine EJS
+*/
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
+
 
 
 
 app.all('*', (req, res) => {
     res.status(404);
     if (req.accepts('html')) {
-        res.sendFile(path.join(__dirname, 'views', 'userRegistration.html'));
+        res.sendFile(path.join(__dirname, 'views', 'register.ejs'));
     } else if (req.accepts('json')) {
-       res.json({ "error": "404 Not Found" });
+        res.json({ "error": "404 Not Found" });
     } else {
         res.type('txt').send("404 Not Found");
     }
