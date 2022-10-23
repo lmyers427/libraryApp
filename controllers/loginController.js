@@ -15,12 +15,14 @@ const ExistingUser = async (req, res) => {
     //Fetch existing user from Database 
     const existingUname = await User.findOne({username: username}).exec();
 
-    const validatePW = await existingUname.comparePassword(password);
+    
 
      //if User does not exist
      if(!existingUname) return res.render('../views/register.ejs', { message: req.session.message = 'Username Not Found' });
 
 
+     //Create a variable to validate passwords
+     const validatePW = await existingUname.comparePassword(password);
    
     //if Password does not match 
     if(!validatePW) return res.render('../views/login.ejs', { message: req.session.message =  `Incorrect password` });
