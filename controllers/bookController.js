@@ -2,9 +2,9 @@ const Book = require('../model/Books');
 const bcrypt = require('bcrypt');
 
 
-const NewBook = async (req, res) => {
+const createNewBook = async (req, res) => {
 
-    const duplicate = await Book.findOne({title: title}).exec();
+    const duplicate = await Book.findOne({title: req.body.title}).exec();
 
     if(duplicate) return { message: req.session.message = 'Book Already Exists' };
 
@@ -20,13 +20,14 @@ const NewBook = async (req, res) => {
         // });
         //test out before posting to Database :)
 
-        const newBook = new Book();
-        newBook.title = title;
-        newBook.author = author;
-        newBook.summary = summary;
-        newBook.status = "status";
+        const newBook = new Book();       
+        newBook.title = req.body.title;
+        newBook.author = req.body.author;
+        newBook.summary = req.body.summary;
+        newBook.status = req.body.status;
+        res.status(201).json(newBook);
         const result = await newBook.save();
-    
+        
     }catch(error){
 
         res.status(500)
@@ -34,6 +35,12 @@ const NewBook = async (req, res) => {
     }
 }
 
+const getBook = async (req, res) => {
+
+    
+}
+
 module.exports = {
-    NewBook
+    createNewBook,
+    getBook
 }
