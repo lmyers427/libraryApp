@@ -130,6 +130,11 @@ span.psw {
     float: none;
 }
 
+span.newacct {
+    display: block;
+    float: none;
+}
+
 span.register {
 
     display: block;
