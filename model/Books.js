@@ -29,7 +29,7 @@ const bookSchema = new Schema({
             
             price: Number
         },
-        owner: {
+        owned: {
             type: Schema.Types.ObjectId, ref: 'User'
         },
     },

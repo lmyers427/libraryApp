@@ -1,0 +1,70 @@
+ <!--HTML Page to test Book Model and Controller  -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Group 1</title>
+    <link rel="stylesheet" type="text/css" href="#" />
+</head>
+<body>
+    <div class = "bookshelf"></div>
+
+
+    <h1>Add a Book </h1>
+    
+    <!-- This will test out our book route on the Post command to verify the model
+    and controller are functioning properly. We will add this to the home page
+for Users who have the Admin or Editor roles eventually-->
+    <form action="/books" method="POST" id="addbook">
+
+        <div class="title">
+            <label for="title"><b>Title</b></label>
+        </div>
+            <input type="text" id="title" placeholder="Enter Book Title" name="title" required>
+        
+        <div class="author">
+        <label for="author"><b>Author</b></label>
+        </div>
+        <input type="text" id="author" placeholder="Enter Book Author" name="author" required>
+
+        <div class="summary">
+        <label for="summary"><b>Summary</b></label>   
+        </div>
+        <textarea form="addbook" id="summary" name="summary">
+            Enter a brief book summary here...
+        </textarea>
+        <div class="status">
+        <label for="status"><b>Book Status</b> </label>
+        </div>
+        <select id="status" id="status" name="status" onchange="displayOption2(this.value)">
+            <option value="rent">rent</option>
+            <option value="buy">buy</option>
+            <option value="owned">owned</option>
+        </select>
+
+<!-- Will need to add optional class to breakout status 
+        <div class="rent" style="display:none;">
+            <label for="availability"><b>availability</b></label>
+            <input type="text" id="availability" placeholder=""
+            
+        </div>
+     -->
+      
+        <button type="submit" class="cancelbtn">Add Book</button>
+        
+
+    </form>
+
+    
+        
+    
+</body>
+
+<footer>
+    <a href="support.html">Support</a>
+</footer>
+</html>
