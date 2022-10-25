@@ -8,7 +8,6 @@ const NewUser = async (req, res) => {
 
     const duplicate = await User.findOne({username: username}).exec();
 
-
     if(duplicate) return res.render('../views/login.ejs', { message: req.session.message = 'Username Already Exists' });
 
     try{
