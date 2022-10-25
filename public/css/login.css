@@ -36,7 +36,7 @@ h3{
 }
 
 /* Blue spine on the book */
-.spine{
+/*.spine{
     height: 600px;
     width: 40px;
     border-radius: 5px 0px 0px 5px;
@@ -46,7 +46,7 @@ h3{
     left: 38%;
     transform: translate(-50%, -50%);
     box-shadow: 0px 2px 0px #5C4033;
-}
+}*/
 
 /*Positions username text over username field*/
 .username{
@@ -117,6 +117,7 @@ a:hover{text-decoration: underline;}
     position: fixed;
     top: 74%;
     left: 48%;
+    transform: translate(-50%, -50%);
 }
 
 /* Positions support link*/
@@ -124,6 +125,7 @@ a:hover{text-decoration: underline;}
     position: fixed;
     top: 74%;
     left: 52%;
+    transform: translate(-50%, -50%);
 }
 
 /* Change styles for span and cancel button on extra small screens */
@@ -146,4 +148,5 @@ span.register {
 .submitbtn {
     width: 100%;
 }
+
 }
