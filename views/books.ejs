@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Group 1</title>
-    <link rel="stylesheet" type="text/css" href="#" />
+    <link rel="stylesheet" type="text/css" href="/css/books.css" />
 </head>
 <body>
     <div class = "bookshelf"></div>
@@ -19,6 +19,7 @@
     <!-- This will test out our book route on the Post command to verify the model
     and controller are functioning properly. We will add this to the home page
 for Users who have the Admin or Editor roles eventually-->
+<div class = "addBook">
     <form action="/books" method="POST" id="addbook">
 
         <div class="title">
@@ -34,9 +35,10 @@ for Users who have the Admin or Editor roles eventually-->
         <div class="summary">
         <label for="summary"><b>Summary</b></label>   
         </div>
-        <textarea form="addbook" id="summary" name="summary">
+        <textarea form="addbook" id="summary" name="summary" rows = "5" columns = "10">
             Enter a brief book summary here...
         </textarea>
+
         <div class="status">
         <label for="status"><b>Book Status</b> </label>
         </div>
@@ -45,7 +47,7 @@ for Users who have the Admin or Editor roles eventually-->
             <option value="buy">buy</option>
             <option value="owned">owned</option>
         </select>
-
+</div>
 <!-- Will need to add optional class to breakout status 
         <div class="rent" style="display:none;">
             <label for="availability"><b>availability</b></label>
@@ -54,17 +56,17 @@ for Users who have the Admin or Editor roles eventually-->
         </div>
      -->
       
-        <button type="submit" class="cancelbtn">Add Book</button>
+        <button type="submit" class="addBookbtn">Add Book</button>
         
 
     </form>
 
-    
         
     
 </body>
 
 <footer>
-    <a href="support.html">Support</a>
+    <span class = "home"><a href = "home">Home</a></span>
+    <span class = "support"><a href="support">Support</a></span>
 </footer>
 </html>

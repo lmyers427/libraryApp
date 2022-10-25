@@ -23,7 +23,7 @@ const createNewBook = async (req, res) => {
         newBook.title = req.body.title;
         newBook.author = req.body.author;
         newBook.summary = req.body.summary;
-       // newBook.status = req.body.status;
+        newBook.status = req.body.status;
        res.status(201).json(newBook);
        const result = await newBook.save();
        

@@ -144,3 +144,9 @@ span.register {
     width: 100%;
 }
 }
+
+footer {
+    position: fixed;
+    top: 75%;
+    left: 48%;
+}
