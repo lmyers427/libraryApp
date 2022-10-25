@@ -5,7 +5,7 @@ const createNewBook = async (req, res) => {
 
     const duplicate = await Book.findOne({title: req.body.title}).exec();
 
-    if(duplicate) return { message: req.session.message = 'Book Already Exists' };
+    if(duplicate) return res.render('../views/books.ejs', {message: req.session.message = 'Book Already Exists'});
 
     try{
 

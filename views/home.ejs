@@ -15,6 +15,14 @@
 
     <h1>Welcome <%= message %> </h1>
 
+    <form action = "/search" method= "get" id = "search">
+        <div class="searchBar">
+            <label for="search"><b>Search for a book:</b></label>
+        </div>
+        <input type="text" id="srch" placeholder="Enter book title" name="srch" required>
+            
+    </form>
+
     <form action="/logout" method="POST" id="logout">
         <button type="submit" class="logoutbtn">Logout</button>
     </form>
