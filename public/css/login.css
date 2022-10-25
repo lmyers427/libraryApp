@@ -31,20 +31,22 @@ h3{
     left: 50%;
     transform: translate(-50%, -50%);
     box-shadow: 5px 2px 2px #5C4033;
+
+    
 }
 
 /* Blue spine on the book */
-/*.spine{
+.spine{
     height: 600px;
     width: 40px;
     border-radius: 5px 0px 0px 5px;
     background-color: #510ddb;
     position: fixed;
     top: 50%;
-    left: 26%;
+    left: 38%;
     transform: translate(-50%, -50%);
     box-shadow: 0px 2px 0px #5C4033;
-}*/
+}
 
 /*Positions username text over username field*/
 .username{
@@ -62,7 +64,6 @@ h3{
     transform: translate(-50%, -50%);
 }
 
-  
 /* Positions username field */
 input[type=text] {
 position: fixed;
@@ -82,13 +83,12 @@ transform: translate(-50%, -50%);
 /* Set a style for all buttons */
 button {
 position: fixed;
-top: 65%;
+top: 68%;
 left: 52%;
 transform: translate(-50%, -60%);
 border: none;
 cursor: pointer;
 }
-
 
 /* Extra style for the submit button */
 .submitbtn {
@@ -98,12 +98,10 @@ border-radius: 30px;
 background-color: rgb(94, 172, 94);
 }
 
-
-
 /* The "Forgot password" text */
-span.psw {
+.forgot {
 position: fixed;
-top: 59%;
+top: 60%;
 left: 52%;
 transform: translate(-50%, -50%);
 }
@@ -115,12 +113,17 @@ a:hover{text-decoration: underline;}
 
 
 /* Sign Up button to register a user */
-span.register {
-
+.signup {
     position: fixed;
-    top: 70%;
+    top: 74%;
+    left: 48%;
+}
+
+/* Positions support link*/
+.support {
+    position: fixed;
+    top: 74%;
     left: 52%;
-    transform: translate(-50%, -50%);
 }
 
 /* Change styles for span and cancel button on extra small screens */
@@ -143,10 +146,4 @@ span.register {
 .submitbtn {
     width: 100%;
 }
-}
-
-footer {
-    position: fixed;
-    top: 75%;
-    left: 48%;
 }
