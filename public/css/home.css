@@ -1,7 +1,7 @@
 /* h1 is hard coded to test Home page and 404, will change*/
 h1{
     position: fixed;
-    top: 30%;
+    top: 20%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
@@ -123,4 +123,16 @@ footer {
     position: fixed;
     top: 75%;
     left: 46%;
+}
+
+.searchBar{
+    position: fixed;
+    top: 30%;
+    left: 34%;
+}
+
+input[type=text]{
+    position: fixed;
+    top: 35%;
+    left: 50%;
 }
