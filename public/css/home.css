@@ -1,7 +1,7 @@
 /* h1 is hard coded to test Home page and 404, will change*/
 h1{
     position: fixed;
-    top: 30%;
+    top: 20%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
@@ -12,6 +12,20 @@ h3{
     top: 35%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+/* Positions home link*/
+.books {
+    position: fixed;
+    top: 85%;
+    left: 46%;
+}
+
+/* Positions support link*/
+.support {
+    position: fixed;
+    top: 85%;
+    left: 50%;
 }
 
 .bookshelf{
@@ -62,8 +76,8 @@ transform: translate(-50%, -50%);
 /* Set a style for all buttons */
 button {
 position: fixed;
-top: 70%;
-left: 50%;
+top: 87%;
+left: 58%;
 transform: translate(-50%, -60%);
 border: none;
 cursor: pointer;
@@ -74,7 +88,8 @@ cursor: pointer;
 .cancelbtn {
 width: auto;
 padding: 10px 18px;
-background-color: green
+border-radius: 30px;
+background-color: rgb(170, 4, 4)
 ;
 }
 

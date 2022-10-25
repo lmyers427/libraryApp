@@ -1,3 +1,4 @@
+/* Positons and Styles "Add Book" text*/
 h1{
     position: fixed;
     top: 20%;
@@ -5,6 +6,7 @@ h1{
     transform: translate(-50%, -50%);
 }
 
+/* Bookshelf background (brown box) */
 .bookshelf{
     height: 600px;
     width:400px;
@@ -17,6 +19,7 @@ h1{
     box-shadow: 5px 2px 2px #5C4033;
 }
 
+/* Positions and Styles Add Book Button */
 .addBookbtn {
     position: fixed;
     top: 77%;
@@ -30,12 +33,14 @@ h1{
     background-color: green;
 }
 
+/* Positions home link*/
 .home {
     position: fixed;
     top: 80%;
     left: 46%;
 }
 
+/* Positions support link*/
 .support {
     position: fixed;
     top: 80%;
@@ -105,11 +110,3 @@ select[type=status]{
     left: 50%;
     transform: translate(-50%, -50%);
     }
-
-
-
-footer {
-    position: fixed;
-    top: 82%;
-    left: 45%;
-}
