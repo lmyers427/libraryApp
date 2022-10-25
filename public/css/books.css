@@ -38,6 +38,7 @@ h1{
     position: fixed;
     top: 80%;
     left: 46%;
+    transform: translate(-50%, -50%);
 }
 
 /* Positions support link*/
@@ -45,6 +46,7 @@ h1{
     position: fixed;
     top: 80%;
     left: 51%;
+    transform: translate(-50%, -50%);
 }
 
 /* Link Styles */
