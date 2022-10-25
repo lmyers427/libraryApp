@@ -1,19 +1,22 @@
-/* Burns and Mobile Label */
+/* Burns and Mobile Text*/
 h1{
     position: fixed;
     font-weight: bolder;
     font-size: 38px;
-    top: 18%;
+    top: 20%;
     left: 52%;
     transform: translate(-50%, -50%);
 }
 
-/*Create User Label*/
+/* Displays message saying you have logged out */
 h3{
-    color: rgb(241, 245, 16);;
+    color: rgb(241, 245, 16);
+    inline-size: 200px;
+    font-weight: bold;
+    text-align: center;
     position: fixed;
-    top: 35%;
-    left: 50%;
+    top: 30%;
+    left: 52%;
     transform: translate(-50%, -50%);
 }
 
@@ -46,99 +49,95 @@ h3{
 /*Positions username text over username field*/
 .username{
     position: fixed;
-    top: 40%;
-    left: 50%;
+    top: 39%;
+    left: 52%;
     transform: translate(-50%, -50%);
 }
 
 /*Positions password text over password field*/
 .password{
     position: fixed;
-    top: 45%;
-    left: 50%;
+    top: 46%;
+    left: 52%;
     transform: translate(-50%, -50%);
 }
 
 /*Positions email text over email field*/
 .email{
-
     position: fixed;
-    top: 50%;
-    left: 50%;
+    top: 53%;
+    left: 52%;
     transform: translate(-50%, -50%);
 }
 
 /*Position first name text over first name field*/
 .fname{
-
     position: fixed;
-    top: 55%;
-    left: 50%;
+    top: 60%;
+    left: 52%;
     transform: translate(-50%, -50%);
 }
 
 /*Position last name text over last name field*/
 .lname{
-
     position: fixed;
-    top: 60%;
-    left: 50%;
+    top: 67%;
+    left: 52%;
     transform: translate(-50%, -50%);
 }
   
 /* Positions username field */
 input[type=text] {
-position: fixed;
-top: 42%;
-left: 50%;
-transform: translate(-50%, -50%);
+    position: fixed;
+    top: 42%;
+    left: 52%;
+    transform: translate(-50%, -50%);
 }
 
 /* Positions password field*/
 input[type=password]{
-position: fixed;
-top: 47%;
-left: 50%;
-transform: translate(-50%, -50%);
+    position: fixed;
+    top: 49%;
+    left: 52%;
+    transform: translate(-50%, -50%);
 }
-
 
 /* Positions email field*/
 input[type=email]{
     position: fixed;
-    top: 53%;
+    top: 56%;
     left: 52%;
     transform: translate(-50%, -50%);
-    }
+}
 
 /* Positions first name field*/
 input[type=fname]{
     position: fixed;
-    top: 57%;
-    left: 50%;
+    top: 63%;
+    left: 52%;
     transform: translate(-50%, -50%);
-    }
+}
 
 /* Positions last name field*/
 input[type=lname]{
     position: fixed;
-    top: 62%;
-    left: 50%;
+    top: 70%;
+    left: 52%;
     transform: translate(-50%, -50%);
-    }
+}
 
 /* Set a style for all buttons */
 button {
-position: fixed;
-top: 70%;
-left: 50%;
-transform: translate(-50%, -60%);
-border-radius: 30px;
-border: none;
-cursor: pointer;
-width: auto;
-padding: 10px 18px;
-background-color: rgb(94, 172, 94)
+    position: fixed;
+    top: 78%;
+    left: 52%;
+    transform: translate(-50%, -60%);
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    width: auto;
+    padding: 10px 18px;
+    background-color: rgb(94, 172, 94);
 }
 
 /* Link Styles */
@@ -149,36 +148,33 @@ a:hover{text-decoration: underline;}
 
 /* Extra style for the submit button */
 .submitbtn {
-width: auto;
-padding: 10px 18px;
-border-radius: 30px;
-background-color: rgb(94, 172, 94)
-;
+    width: auto;
+    padding: 10px 18px;
+    border-radius: 30px;
+    background-color: rgb(94, 172, 94);
 }
 
-.remember{
+/* Positions support link*/
+.support {
     position: fixed;
-    top: 65%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: 82%;
+    left: 53%;
 }
-
 
 /* Login Text */
-span.psw {
-position: fixed;
-top: 80%;
-left: 50%;
-transform: translate(-50%, -50%);
+.loginbtn {
+    position: fixed;
+    top: 82%;
+    left: 48%;
 }
 
 /* Change styles for span and submit button on extra small screens */
 @media screen and (max-width: 500px) {
-span.psw {
-    display: block;
-    float: none;
-}
-.cancelbtn {
-    width: 100%;
-}
+    .loginbtn {
+        display: block;
+        float: none;
+    }
+    .cancelbtn {
+        width: 100%;
+    }
 }
