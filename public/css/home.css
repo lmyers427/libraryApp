@@ -1,18 +1,29 @@
 /* h1 is hard coded to test Home page and 404, will change*/
 h1{
     position: fixed;
-    top: 30%;
+    top: 20%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
 
-h3{
-    color: red;
+/* Positions home link*/
+.books {
     position: fixed;
-    top: 35%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: 85%;
+    left: 46%;
 }
+
+/* Positions support link*/
+.support {
+    position: fixed;
+    top: 85%;
+    left: 50%;
+}
+
+/* Link Styles */
+a:link{text-decoration: none;}
+a:visited{text-decoration: none;}
+a:hover{text-decoration: underline;}
 
 .bookshelf{
     height: 600px;
@@ -26,101 +37,23 @@ h3{
     box-shadow: 5px 5px 5px #5C4033;
 }
 
-/*Position username text over username field*/
-.username{
-    position: fixed;
-    top: 45%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
 
-/*Position password text over username field*/
-.password{
-    position: fixed;
-    top: 55%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-  
-/* Position username field */
-input[type=text] {
-position: fixed;
-top: 50%;
-left: 50%;
-transform: translate(-50%, -50%);
-}
-
-/* Positions password field*/
-input[type=password]{
-position: fixed;
-top: 60%;
-left: 50%;
-transform: translate(-50%, -50%);
-}
 
 /* Set a style for all buttons */
 button {
 position: fixed;
-top: 70%;
-left: 50%;
+top: 87%;
+left: 58%;
 transform: translate(-50%, -60%);
 border: none;
 cursor: pointer;
 }
 
-
-/* Extra style for the cancel button (red) */
-.cancelbtn {
+/* Extra style for the logout button (red) */
+.logoutbtn {
 width: auto;
 padding: 10px 18px;
-background-color: green
+border-radius: 30px;
+background-color: rgb(170, 4, 4)
 ;
-}
-
-.remember{
-    position: fixed;
-    top: 64%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-
-/* The "Forgot password" text */
-span.psw {
-position: fixed;
-top: 75%;
-left: 50%;
-transform: translate(-50%, -50%);
-}
-
-span.register {
-
-    position: fixed;
-    top: 80%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    }
-
-/* Change styles for span and cancel button on extra small screens */
-@media screen and (max-width: 500px) {
-span.psw {
-    display: block;
-    float: none;
-}
-
-span.register {
-
-    display: block;
-    float: none;
-}
-.cancelbtn {
-    width: 100%;
-}
-}
-
-footer {
-    position: fixed;
-    top: 75%;
-    left: 46%;
 }
