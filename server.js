@@ -32,7 +32,7 @@ app.use('/login', require('./routes/login'));
 app.use('/register', require('./routes/register'));
 app.use('/logout', require('./routes/logout'));
 app.use('/books', require('./routes/books'));
-
+app.use('/search', require('./routes/search'));
 /*
 Added for view engine EJS
 */

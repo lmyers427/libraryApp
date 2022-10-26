@@ -4,7 +4,7 @@ h1{
     font-weight: bolder;
     font-size: 38px;
     top: 20%;
-    left: 52%;
+    left: 50%;
     transform: translate(-50%, -50%);
 }
 
@@ -16,7 +16,7 @@ h3{
     text-align: center;
     position: fixed;
     top: 30%;
-    left: 52%;
+    left: 50%;
     transform: translate(-50%, -50%);
 }
 
@@ -31,6 +31,8 @@ h3{
     left: 50%;
     transform: translate(-50%, -50%);
     box-shadow: 5px 2px 2px #5C4033;
+
+    
 }
 
 /* Blue spine on the book */
@@ -41,7 +43,7 @@ h3{
     background-color: #510ddb;
     position: fixed;
     top: 50%;
-    left: 26%;
+    left: 38%;
     transform: translate(-50%, -50%);
     box-shadow: 0px 2px 0px #5C4033;
 }*/
@@ -50,7 +52,7 @@ h3{
 .username{
     position: fixed;
     top: 40%;
-    left: 52%;
+    left: 50%;
     transform: translate(-50%, -50%);
 }
 
@@ -58,16 +60,15 @@ h3{
 .password{
     position: fixed;
     top: 50%;
-    left: 52%;
+    left: 50%;
     transform: translate(-50%, -50%);
 }
 
-  
 /* Positions username field */
 input[type=text] {
 position: fixed;
 top: 45%;
-left: 52%;
+left: 50%;
 transform: translate(-50%, -50%);
 }
 
@@ -75,20 +76,19 @@ transform: translate(-50%, -50%);
 input[type=password]{
 position: fixed;
 top: 55%;
-left: 52%;
+left: 50%;
 transform: translate(-50%, -50%);
 }
 
 /* Set a style for all buttons */
 button {
 position: fixed;
-top: 65%;
-left: 52%;
+top: 68%;
+left: 50%;
 transform: translate(-50%, -60%);
 border: none;
 cursor: pointer;
 }
-
 
 /* Extra style for the submit button */
 .submitbtn {
@@ -98,13 +98,11 @@ border-radius: 30px;
 background-color: rgb(94, 172, 94);
 }
 
-
-
 /* The "Forgot password" text */
-span.psw {
+.forgot {
 position: fixed;
-top: 59%;
-left: 52%;
+top: 60%;
+left: 50%;
 transform: translate(-50%, -50%);
 }
 
@@ -115,16 +113,23 @@ a:hover{text-decoration: underline;}
 
 
 /* Sign Up button to register a user */
-span.register {
-
+.signup {
     position: fixed;
-    top: 70%;
+    top: 74%;
+    left: 48%;
+    transform: translate(-50%, -50%);
+}
+
+/* Positions support link*/
+.support {
+    position: fixed;
+    top: 74%;
     left: 52%;
     transform: translate(-50%, -50%);
 }
 
-/* Change styles for span and cancel button on extra small screens */
-@media screen and (max-width: 500px) {
+/*Change styles for span and cancel button on extra small screens*/
+@media (max-width: 500px) {
 span.psw {
     display: block;
     float: none;
@@ -135,12 +140,8 @@ span.newacct {
     float: none;
 }
 
-span.register {
-
-    display: block;
-    float: none;
-}
 .submitbtn {
     width: 100%;
 }
+
 }
