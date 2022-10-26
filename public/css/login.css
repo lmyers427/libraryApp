@@ -4,7 +4,7 @@ h1{
     font-weight: bolder;
     font-size: 38px;
     top: 20%;
-    left: 52%;
+    left: 50%;
     transform: translate(-50%, -50%);
 }
 
@@ -16,7 +16,7 @@ h3{
     text-align: center;
     position: fixed;
     top: 30%;
-    left: 52%;
+    left: 50%;
     transform: translate(-50%, -50%);
 }
 
@@ -36,7 +36,7 @@ h3{
 }
 
 /* Blue spine on the book */
-.spine{
+/*.spine{
     height: 600px;
     width: 40px;
     border-radius: 5px 0px 0px 5px;
@@ -46,13 +46,13 @@ h3{
     left: 38%;
     transform: translate(-50%, -50%);
     box-shadow: 0px 2px 0px #5C4033;
-}
+}*/
 
 /*Positions username text over username field*/
 .username{
     position: fixed;
     top: 40%;
-    left: 52%;
+    left: 50%;
     transform: translate(-50%, -50%);
 }
 
@@ -60,7 +60,7 @@ h3{
 .password{
     position: fixed;
     top: 50%;
-    left: 52%;
+    left: 50%;
     transform: translate(-50%, -50%);
 }
 
@@ -68,7 +68,7 @@ h3{
 input[type=text] {
 position: fixed;
 top: 45%;
-left: 52%;
+left: 50%;
 transform: translate(-50%, -50%);
 }
 
@@ -76,7 +76,7 @@ transform: translate(-50%, -50%);
 input[type=password]{
 position: fixed;
 top: 55%;
-left: 52%;
+left: 50%;
 transform: translate(-50%, -50%);
 }
 
@@ -84,7 +84,7 @@ transform: translate(-50%, -50%);
 button {
 position: fixed;
 top: 68%;
-left: 52%;
+left: 50%;
 transform: translate(-50%, -60%);
 border: none;
 cursor: pointer;
@@ -102,7 +102,7 @@ background-color: rgb(94, 172, 94);
 .forgot {
 position: fixed;
 top: 60%;
-left: 52%;
+left: 50%;
 transform: translate(-50%, -50%);
 }
 
@@ -124,7 +124,7 @@ a:hover{text-decoration: underline;}
 .support {
     position: fixed;
     top: 74%;
-    left: 56%;
+    left: 52%;
     transform: translate(-50%, -50%);
 }
 
@@ -143,7 +143,5 @@ span.newacct {
 .submitbtn {
     width: 100%;
 }
-
-
 
 }

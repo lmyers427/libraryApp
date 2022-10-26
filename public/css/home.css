@@ -17,8 +17,13 @@ h1{
 /* Positions support link*/
 .support {
     position: fixed;
+<<<<<<< HEAD
     top: 80%;
     left: 56%;
+=======
+    top: 85%;
+    left: 50%;
+>>>>>>> d2b3025dba31f84cad3ab5d1d760818bc68326c3
     transform: translate(-50%, -50%);
 }
 
@@ -56,6 +61,13 @@ cursor: pointer;
 width: auto;
 padding: 10px 18px;
 border-radius: 30px;
-background-color: rgb(170, 4, 4)
-;
+background-color: rgb(170, 4, 4);
+}
+
+
+input[type=search]{
+    position: fixed;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
