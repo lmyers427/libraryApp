@@ -9,7 +9,7 @@ h1{
 /* Positions home link*/
 .books {
     position: fixed;
-    top: 85%;
+    top: 80%;
     left: 46%;
     transform: translate(-50%, -50%);
 }
@@ -17,8 +17,13 @@ h1{
 /* Positions support link*/
 .support {
     position: fixed;
+<<<<<<< HEAD
+    top: 80%;
+    left: 56%;
+=======
     top: 85%;
     left: 50%;
+>>>>>>> d2b3025dba31f84cad3ab5d1d760818bc68326c3
     transform: translate(-50%, -50%);
 }
 
@@ -44,9 +49,9 @@ a:hover{text-decoration: underline;}
 /* Set a style for all buttons */
 button {
 position: fixed;
-top: 87%;
-left: 58%;
-transform: translate(-50%, -60%);
+top: 75%;
+left: 50%;
+transform: translate(-50%, -50%);
 border: none;
 cursor: pointer;
 }

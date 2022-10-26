@@ -13,7 +13,8 @@ const bookController = require('../controllers/bookController');
     //.delete(verifyRoles(ROLES_LIST.Admin), bookController.deleteBook);
 
 router.get('/', (req, res) => {
-    res.render(path.join(__dirname, '..', 'views', 'books')); //with ejs updated to render
+    let message = req.session.message;
+    res.render(path.join(__dirname, '..', 'views', 'books'), {message: message}); //with ejs updated to render
     
 });
 

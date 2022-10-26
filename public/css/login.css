@@ -128,8 +128,8 @@ a:hover{text-decoration: underline;}
     transform: translate(-50%, -50%);
 }
 
-/* Change styles for span and cancel button on extra small screens */
-@media screen and (max-width: 500px) {
+/*Change styles for span and cancel button on extra small screens*/
+@media (max-width: 500px) {
 span.psw {
     display: block;
     float: none;
@@ -140,11 +140,6 @@ span.newacct {
     float: none;
 }
 
-span.register {
-
-    display: block;
-    float: none;
-}
 .submitbtn {
     width: 100%;
 }

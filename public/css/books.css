@@ -6,6 +6,20 @@ h1{
     transform: translate(-50%, -50%);
 }
 
+/* Displays message saying you have added book */
+h3{
+    color: rgb(241, 245, 16);
+    inline-size: 200px;
+    font-weight: bold;
+    text-align: center;
+    position: fixed;
+    top: 20%;
+    left: 52%;
+    transform: translate(-50%, -50%);
+}
+
+
+
 /* Bookshelf background (brown box) */
 .bookshelf{
     height: 600px;

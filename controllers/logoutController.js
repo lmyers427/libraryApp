@@ -18,7 +18,9 @@ const logOut = async (req, res) => {
     req.session.message =  "Thank you! You have successfully logged out";
     
 
-    res.render('../views/login.ejs' , { message: req.session.message });
+   res.render('../views/logout.ejs' , { message: req.session.message });
+
+   
 };
 
 module.exports = {
