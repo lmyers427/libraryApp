@@ -38,12 +38,43 @@ const createNewBook = async (req, res) => {
     }
 }
 
-const getBook = async (req, res) => {
+const getBooks = async (req, res) => {
 
     
+    const {search, searchOption} = req.query; //may change depending on HTML
+    
+    console.log(search);
+    console.log(searchOption);
+
+    if(!search) return res.status(400).json({'message':'Nothing in Search'});
+    
+    if(searchOption == "author") 
+    {
+    //Fetch existing books in database associated with that author 
+
+    const BookResult = await Book.find({author: search });
+
+    res.status(201).json(BookResult);
+    }
+   
+    else if(searchOption == "title")
+    {
+
+    const BookResult = await Book.find({title: search});
+
+    res.status(201).json(BookResult);
+
+    }
+
+    else
+    {
+
+        res.status(201).json({message: "No search results found for given criteria"});
+    }
+   
 }
 
 module.exports = {
     createNewBook,
-    getBook
+    getBooks
 }
