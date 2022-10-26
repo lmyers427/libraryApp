@@ -36,16 +36,16 @@ h1{
 /* Positions home link*/
 .home {
     position: fixed;
-    top: 80%;
-    left: 46%;
+    top: 82%;
+    left: 48%;
     transform: translate(-50%, -50%);
 }
 
 /* Positions support link*/
 .support {
     position: fixed;
-    top: 80%;
-    left: 51%;
+    top: 82%;
+    left: 52%;
     transform: translate(-50%, -50%);
 }
 
