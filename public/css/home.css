@@ -9,15 +9,17 @@ h1{
 /* Positions home link*/
 .books {
     position: fixed;
-    top: 85%;
+    top: 80%;
     left: 46%;
+    transform: translate(-50%, -50%);
 }
 
 /* Positions support link*/
 .support {
     position: fixed;
-    top: 85%;
-    left: 50%;
+    top: 80%;
+    left: 56%;
+    transform: translate(-50%, -50%);
 }
 
 /* Link Styles */
@@ -42,9 +44,9 @@ a:hover{text-decoration: underline;}
 /* Set a style for all buttons */
 button {
 position: fixed;
-top: 87%;
-left: 58%;
-transform: translate(-50%, -60%);
+top: 75%;
+left: 50%;
+transform: translate(-50%, -50%);
 border: none;
 cursor: pointer;
 }
