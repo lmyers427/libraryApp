@@ -26,15 +26,10 @@ const createNewBook = async (req, res) => {
         newBook.status = req.body.status;
         //res.status(201).json(newBook);
         const result = await newBook.save();
-<<<<<<< HEAD
       
 
         res.render('../views/books.ejs', {message: req.session.message = 'Book Successfully added to the database'});
     
-=======
-
-        res.render('../views/books.ejs', {message: req.session.message = 'Book successfully created.'});
->>>>>>> d2b3025dba31f84cad3ab5d1d760818bc68326c3
        
     }catch(error){
 
@@ -43,12 +38,43 @@ const createNewBook = async (req, res) => {
     }
 }
 
-const getBook = async (req, res) => {
+const getBooks = async (req, res) => {
 
     
+    const {search, searchOption} = req.query; //may change depending on HTML
+    
+    console.log(search);
+    console.log(searchOption);
+
+    if(!search) return res.status(400).json({'message':'Nothing in Search'});
+    
+    if(searchOption == "author") 
+    {
+    //Fetch existing books in database associated with that author 
+
+    const BookResult = await Book.find({author: search });
+
+    res.status(201).json(BookResult);
+    }
+   
+    else if(searchOption == "title")
+    {
+
+    const BookResult = await Book.find({title: search});
+
+    res.status(201).json(BookResult);
+
+    }
+
+    else
+    {
+
+        res.status(201).json({message: "No search results found for given criteria"});
+    }
+   
 }
 
 module.exports = {
     createNewBook,
-    getBook
+    getBooks
 }
