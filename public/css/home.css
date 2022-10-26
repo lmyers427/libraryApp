@@ -14,19 +14,6 @@ h1{
     transform: translate(-50%, -50%);
 }
 
-/* Positions support link*/
-.support {
-    position: fixed;
-<<<<<<< HEAD
-    top: 80%;
-    left: 56%;
-=======
-    top: 85%;
-    left: 50%;
->>>>>>> d2b3025dba31f84cad3ab5d1d760818bc68326c3
-    transform: translate(-50%, -50%);
-}
-
 /* Link Styles */
 a:link{text-decoration: none;}
 a:visited{text-decoration: none;}
@@ -70,4 +57,10 @@ input[type=search]{
     top: 30%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+.support {
+    position: fixed;
+    top: 80%;
+    left: 50%;
 }
