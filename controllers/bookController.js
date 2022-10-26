@@ -24,8 +24,10 @@ const createNewBook = async (req, res) => {
         newBook.author = req.body.author;
         newBook.summary = req.body.summary;
         newBook.status = req.body.status;
-       res.status(201).json(newBook);
-       const result = await newBook.save();
+        //res.status(201).json(newBook);
+        const result = await newBook.save();
+
+        res.render('../views/books.ejs', {message: req.session.message = 'Book successfully created.'});
        
     }catch(error){
 
