@@ -15,9 +15,16 @@
 
     <h1>Welcome <%= message %> </h1>
 
-    <form action = "/search" method= "get" id = "search">
+    <form action = "/search" method= "GET" id = "search">
 
-        <input type="search" id="srch" placeholder="Search..." name="srch" required>
+        <!-- This will help determine if search is for author or title -->
+        <select type="searchOption" class="search"  id="searchOption" name="searchOption" onchange="displayOption2(this.value)">
+            <option value="author">ByAuthor</option>
+            <option value="title">ByTitle</option>
+        </select>
+
+        <input type="search" id="search" placeholder="Search for Books" name="search" required>
+        <button type="submit" class="srchbtn">Search</button>
             
     </form>
 
