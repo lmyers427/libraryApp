@@ -18,11 +18,11 @@ const ExistingUser = async (req, res) => {
     
 
      //if User does not exist
-     if(!existingUname) return res.render('../views/register.ejs', { message: req.session.message = 'Username Not Found' });
+    if(!existingUname) return res.render('../views/register.ejs', { message: req.session.message = 'Username Not Found' });
 
 
      //Create a variable to validate passwords
-     const validatePW = await existingUname.comparePassword(password);
+    const validatePW = await existingUname.comparePassword(password);
    
     //if Password does not match 
     if(!validatePW) return res.render('../views/login.ejs', { message: req.session.message =  `Incorrect password` });

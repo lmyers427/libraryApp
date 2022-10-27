@@ -26,11 +26,11 @@ const createNewBook = async (req, res) => {
         newBook.status = req.body.status;
         //res.status(201).json(newBook);
         const result = await newBook.save();
-      
+    
 
         res.render('../views/books.ejs', {message: req.session.message = 'Book Successfully added to the database'});
     
-       
+    
     }catch(error){
 
         res.status(500)
@@ -56,14 +56,15 @@ const getBooks = async (req, res) => {
 
     res.status(201).json(BookResult);
     }
-   
+
     else if(searchOption == "title")
     {
 
     const BookResult = await Book.find({title: search});
 
     res.status(201).json(BookResult);
-
+    
+    
     }
 
     else
@@ -71,7 +72,6 @@ const getBooks = async (req, res) => {
 
         res.status(201).json({message: "No search results found for given criteria"});
     }
-   
 }
 
 module.exports = {
