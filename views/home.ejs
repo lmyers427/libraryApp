@@ -11,14 +11,14 @@
     <link rel="stylesheet" type="text/css" href="/css/home.css" />
 </head>
 <body>
-    <div class = "bookshelf"></div>
+    <div class = "bookshelf">
 
     <h1>Welcome <%= message %> </h1>
 
     <form action = "/search" method= "GET" id = "search">
 
         <!-- This will help determine if search is for author or title -->
-        <select type="searchOption" class="search"  id="searchOption" name="searchOption" onchange="displayOption2(this.value)">
+        <select type="searchOption" class="searchOption"  id="searchOption" name="searchOption" onchange="displayOption2(this.value)">
             <option value="author">ByAuthor</option>
             <option value="title">ByTitle</option>
         </select>
@@ -32,10 +32,11 @@
         <button type="submit" class="logoutbtn">Logout</button>
     </form>
 
-</body>
-
-<footer>
     <span class = "support"><a href="support">Support</a></span>
     <span class="books"><a href="books">Admin</a></span>
-</footer>
+    </div>
+</body>
+
+
+
 </html>

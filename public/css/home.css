@@ -1,26 +1,13 @@
 /* h1 is hard coded to test Home page and 404, will change*/
 h1{
     position: fixed;
-    top: 20%;
+    top: 15%;
     left: 50%;
     transform: translate(-50%, -50%);
+    font-size: 28px;
 }
 
-/* Positions home link*/
-.books {
-    position: fixed;
-    top: 80%;
-    left: 46%;
-    transform: translate(-50%, -50%);
-}
 
-/* Positions support link*/
-.support {
-    position: fixed;
-    top: 80%;
-    left: 56%;
-    transform: translate(-50%, -50%);
-}
 
 /* Link Styles */
 a:link{text-decoration: none;}
@@ -84,8 +71,8 @@ cursor: pointer;
     padding: 10px 18px;
     border-radius: 30px;
     background-color: rgb(236, 231, 231);
-    top: 35%;
-    left: 65%;
+    top: 38%;
+    left: 83%;
     transform: translate(-50%, -50%);
     position: fixed;
     border: none;
@@ -93,11 +80,10 @@ cursor: pointer;
 
 }
 
-
-input[type=search]{
+.searchOption {
     position: fixed;
     top: 30%;
-    left: 57%;
+    left: 22%;
     transform: translate(-50%, -50%);
     width: auto;
     padding: 10px 18px;
@@ -105,8 +91,30 @@ input[type=search]{
     background-color: rgb(236, 231, 231);
 }
 
+
+input[type=search]{
+    position: fixed;
+    top: 30%;
+    left: 68%;
+    transform: translate(-50%, -50%);
+    width: auto;
+    padding: 10px 18px;
+    border-radius: 30px;
+    background-color: rgb(236, 231, 231);
+}
+
+/* Positions support link*/
 .support {
     position: fixed;
-    top: 80%;
-    left: 50%;
+    top: 82%;
+    left: 60%;
+    transform: translate(-50%, -50%);
+}
+
+/* Positions admin link*/
+.books {
+    position: fixed;
+    top: 82%;
+    left: 40%;
+    transform: translate(-50%, -50%);
 }
