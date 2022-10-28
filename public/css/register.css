@@ -2,8 +2,8 @@
 h1{
     position: fixed;
     font-weight: bolder;
-    font-size: 38px;
-    top: 20%;
+    font-size: 25px;
+    top: 15%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
@@ -15,7 +15,7 @@ h3{
     font-weight: bold;
     text-align: center;
     position: fixed;
-    top: 30%;
+    top: 22%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
@@ -49,7 +49,7 @@ h3{
 /*Positions username text over username field*/
 .username{
     position: fixed;
-    top: 39%;
+    top: 32%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
@@ -57,7 +57,7 @@ h3{
 /*Positions password text over password field*/
 .password{
     position: fixed;
-    top: 46%;
+    top: 41%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
@@ -65,7 +65,7 @@ h3{
 /*Positions email text over email field*/
 .email{
     position: fixed;
-    top: 53%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
@@ -73,7 +73,7 @@ h3{
 /*Position first name text over first name field*/
 .fname{
     position: fixed;
-    top: 60%;
+    top: 59%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
@@ -81,7 +81,7 @@ h3{
 /*Position last name text over last name field*/
 .lname{
     position: fixed;
-    top: 67%;
+    top: 68%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
@@ -89,7 +89,7 @@ h3{
 /* Positions username field */
 input[type=text] {
     position: fixed;
-    top: 42%;
+    top: 36%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
@@ -97,7 +97,7 @@ input[type=text] {
 /* Positions password field*/
 input[type=password]{
     position: fixed;
-    top: 49%;
+    top: 45%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
@@ -105,7 +105,7 @@ input[type=password]{
 /* Positions email field*/
 input[type=email]{
     position: fixed;
-    top: 56%;
+    top: 54%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
@@ -121,7 +121,7 @@ input[type=fname]{
 /* Positions last name field*/
 input[type=lname]{
     position: fixed;
-    top: 70%;
+    top: 72%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
@@ -129,7 +129,7 @@ input[type=lname]{
 /* Set a style for all buttons */
 button {
     position: fixed;
-    top: 78%;
+    top: 80%;
     left: 50%;
     transform: translate(-50%, -60%);
     border-radius: 30px;
@@ -157,16 +157,16 @@ a:hover{text-decoration: underline;}
 /* Positions support link*/
 .support {
     position: fixed;
-    top: 82%;
-    left: 53%;
+    top: 86%;
+    left: 60%;
     transform: translate(-50%, -50%);
 }
 
 /* Login Text */
 .loginbtn {
     position: fixed;
-    top: 82%;
-    left: 48%;
+    top: 86%;
+    left: 40%;
     transform: translate(-50%, -50%);
 }
 
