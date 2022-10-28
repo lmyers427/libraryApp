@@ -12,5 +12,6 @@ router.get('/', (req, res) => {
 
 router.post('/', bookController.createNewBook);
 
+router.delete('/', bookController.deleteBook);
 
 module.exports = router;

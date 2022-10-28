@@ -74,7 +74,22 @@ const getBooks = async (req, res) => {
     }
 }
 
+const deleteBook = async (req, res) => {
+    if (!req?.body?.id) return res.status(400).json({ 'message': 'Book title required.' });
+
+    const book = await Book.findOne({ title: req.body.title }).exec();
+    if (!book) {
+        return res.status(204).json({ "message": `No book found matching title ${req.body.title}.` });
+    }
+    const result = await book.deleteOne(); 
+    res.json(result);
+    
+    // for testing
+    console.log(book + 'deleted')
+}
+
 module.exports = {
     createNewBook,
-    getBooks
+    getBooks,
+    deleteBook
 }

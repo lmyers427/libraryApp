@@ -17,6 +17,8 @@
 <!-- This will test out our book route on the Post command to verify the model
 and controller are functioning properly. We will add this to the home page
 for Users who have the Admin or Editor roles eventually-->
+
+
 <!-- <div class = "addBook"> -->
 
     <form action="/books" method="POST" id="addbook">
@@ -45,6 +47,8 @@ for Users who have the Admin or Editor roles eventually-->
             <option value="buy">buy</option>
             <option value="owned">owned</option>
         </select>
+    
+
 
 <!-- Will need to add optional class to breakout status 
         <div class="rent" style="display:none;">
@@ -59,8 +63,25 @@ for Users who have the Admin or Editor roles eventually-->
     </form>
 
     <!-- </div> -->
-    
+    <br><br>
+
+    <!-- This will test our delete book route for admin use-->
+    <div class="deletebook">
+        <form action="/books" method="DELETE"></form>
+            <div>
+                <label><b>Title</b></label>            
+            </div>            
+            <div>
+                <input type="title" id="title" placeholder="Enter Book Title" name="title" required>
+            </div>
+            <div>
+                <button type="submit">Delete Book</button>
+            </div>        
+        </form>
+    </div>
 </body>
+
+
 
 <footer>
     <span class = "home"><a href = "home">Home</a></span>
