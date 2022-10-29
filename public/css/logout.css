@@ -17,7 +17,7 @@ h1{
     box-shadow: 5px 5px 5px #5C4033;
 }
 /* The "logout" text */
-.psw {
+span.psw {
     position: fixed;
     top: 50%;
     left: 20%;
