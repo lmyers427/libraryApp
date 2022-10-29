@@ -35,7 +35,7 @@ const NewUser = async (req, res) => {
     
     }catch(error){
 
-        res.status(500)
+        res.status(500).render('../views/login.ejs', {message: req.session.message = 'Failed to create new user'});
 
     }
 

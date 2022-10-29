@@ -32,6 +32,9 @@ const ExistingUser = async (req, res) => {
     
         req.session.message =  `${existingUname.username}`;
         req.session.user = existingUname.username;
+        //Assigning session variable to User's assigned roles
+        req.session.role = existingUname.role;
+        console.log(req.session.role);
         res.render('../views/home.ejs', { message: req.session.message });
 
        
