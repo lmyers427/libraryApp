@@ -1,6 +1,17 @@
 h1{
     position: fixed;
-    top: 45%;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+h3{
+    color: rgb(241, 245, 16);
+    inline-size: 200px;
+    font-weight: bold;
+    text-align: center;
+    position: fixed;
+    top: 25%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
@@ -16,11 +27,12 @@ h1{
     transform: translate(-50%, -50%);
     box-shadow: 5px 5px 5px #5C4033;
 }
+
 /* The "logout" text */
-span.psw {
+.loginPage {
     position: fixed;
     top: 50%;
-    left: 20%;
+    left: 50%;
     transform: translate(-50%, -50%);
     }
 

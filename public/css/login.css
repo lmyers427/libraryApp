@@ -2,8 +2,8 @@
 h1{
     position: fixed;
     font-weight: bolder;
-    font-size: 38px;
-    top: 20%;
+    font-size: 25px;
+    top: 15%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
@@ -15,7 +15,7 @@ h3{
     font-weight: bold;
     text-align: center;
     position: fixed;
-    top: 30%;
+    top: 22%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
@@ -51,7 +51,7 @@ h3{
 /*Positions username text over username field*/
 .username{
     position: fixed;
-    top: 40%;
+    top: 35%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
@@ -59,7 +59,7 @@ h3{
 /*Positions password text over password field*/
 .password{
     position: fixed;
-    top: 50%;
+    top: 45%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
@@ -67,7 +67,7 @@ h3{
 /* Positions username field */
 input[type=text] {
 position: fixed;
-top: 45%;
+top: 40%;
 left: 50%;
 transform: translate(-50%, -50%);
 }
@@ -75,7 +75,7 @@ transform: translate(-50%, -50%);
 /* Positions password field*/
 input[type=password]{
 position: fixed;
-top: 55%;
+top: 50%;
 left: 50%;
 transform: translate(-50%, -50%);
 }
@@ -115,16 +115,16 @@ a:hover{text-decoration: underline;}
 /* Sign Up button to register a user */
 .signup {
     position: fixed;
-    top: 74%;
-    left: 48%;
+    top: 82%;
+    left: 40%;
     transform: translate(-50%, -50%);
 }
 
 /* Positions support link*/
 .support {
     position: fixed;
-    top: 74%;
-    left: 52%;
+    top: 82%;
+    left: 60%;
     transform: translate(-50%, -50%);
 }
 
