@@ -47,6 +47,19 @@ h3{
     background-color: green;
 }
 
+/* background for delete button */
+.deletebook{
+    height: 200px;
+    width:200px;
+    border-radius: 5px;
+    background-color: #967969;
+    position: fixed;
+    top: 50%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+    box-shadow: 5px 2px 2px #5C4033;
+}
+
 /* Positions home link*/
 .home {
     position: fixed;
