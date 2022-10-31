@@ -19,6 +19,8 @@ router.get('/', (req, res) => {
 
 router.post('/', verifyRoles(ROLES_LIST.Admin, ROLES_LIST.Editor), bookController.createNewBook);
 
-router.delete('/', bookController.deleteBook);
+
+//verify roles before allowing user to delete book from database. 
+router.delete('/', verifyRoles(ROLES_LIST.Admin, ROLES_LIST.Editor), bookController.deleteBook);
 
 module.exports = router;
