@@ -29,7 +29,8 @@ const createNewBook = async (req, res) => {
     
 
         res.render('../views/books.ejs', {message: req.session.message = 'Book Successfully added to the database'});
-    
+        
+        console.log(result); // testing log to verify book created correctly
     
     }catch(error){
 
@@ -75,7 +76,8 @@ const getBooks = async (req, res) => {
 }
 
 const deleteBook = async (req, res) => {
-    if (!req?.body?.id) return res.status(400).json({ 'message': 'Book title required.' });
+    console.log(req);
+    if (!req?.body?.title) return res.status(400).json({ 'message': 'Book title required.' });
 
     const book = await Book.findOne({ title: req.body.title }).exec();
     if (!book) {
