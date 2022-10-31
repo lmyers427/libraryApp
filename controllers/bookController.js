@@ -30,11 +30,11 @@ const createNewBook = async (req, res) => {
         newBook.status = req.body.status;
         //res.status(201).json(newBook);
         const result = await newBook.save();
-      
+    
 
         res.render('../views/books.ejs', {message: 'Book Successfully added to the database'});
     
-       
+    
     }catch(error){
 
         res.status(500)
@@ -74,7 +74,8 @@ const getBooks = async (req, res) => {
     //Json response with all the existing results for search criteria
     //Will change to display search criteria
     res.status(201).json(BookResult);
-
+    
+    
     }
 
     else
@@ -82,10 +83,24 @@ const getBooks = async (req, res) => {
 
         res.status(201).json({message: "No search results found for given criteria"});
     }
-   
+}
+
+const deleteBook = async (req, res) => {
+    if (!req?.body?.id) return res.status(400).json({ 'message': 'Book title required.' });
+
+    const book = await Book.findOne({ title: req.body.title }).exec();
+    if (!book) {
+        return res.status(204).json({ "message": `No book found matching title ${req.body.title}.` });
+    }
+    const result = await book.deleteOne(); 
+    res.json(result);
+    
+    // for testing
+    console.log(book + 'deleted')
 }
 
 module.exports = {
     createNewBook,
-    getBooks
+    getBooks,
+    deleteBook
 }
