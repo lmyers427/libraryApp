@@ -1,3 +1,6 @@
+//Middleware included to confirm User Roles for site permissions and access 
+
+
 const verifyRoles = (...allowedRoles) => {
 
     return (req, res, next) => {
@@ -9,22 +12,20 @@ const verifyRoles = (...allowedRoles) => {
 
         const rolesArray = [...allowedRoles];
 
-        console.log(rolesArray);
         let testValue = false;
         for (const property in roles){
 
-            console.log(property);
             if(rolesArray.includes(roles[property])){
 
                 testValue = true;
 
-                console.log(testValue);
+                
 
                 
             }
         }
 
-        console.log(testValue);
+        
         const result = testValue;
         if(!result) return res.sendStatus(401);
         next();

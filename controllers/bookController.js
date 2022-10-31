@@ -5,7 +5,11 @@ const createNewBook = async (req, res) => {
 
     const duplicate = await Book.findOne({title: req.body.title}).exec();
 
-    if(duplicate) return res.render('../views/books.ejs', {message: req.session.message = 'Book Already Exists'});
+    if(duplicate) return res.render('../views/books.ejs', {message: 'Book Already Exists'});
+
+
+    
+
 
     try{
 
@@ -28,7 +32,7 @@ const createNewBook = async (req, res) => {
         const result = await newBook.save();
       
 
-        res.render('../views/books.ejs', {message: req.session.message = 'Book Successfully added to the database'});
+        res.render('../views/books.ejs', {message: 'Book Successfully added to the database'});
     
        
     }catch(error){

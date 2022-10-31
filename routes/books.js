@@ -16,8 +16,8 @@ const verifyRoles = require('../middleware/verifyRoles');
 
 
 router.get('/', (req, res) => {
-    let message = req.session.message;
-    res.render(path.join(__dirname, '..', 'views', 'books'), {message: message}); //with ejs updated to render
+    
+    res.render(path.join(__dirname, '..', 'views', 'books'), {message: ' '}); //with ejs updated to render
     
 });
 
