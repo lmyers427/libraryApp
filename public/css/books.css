@@ -1,7 +1,7 @@
 /* Positons and Styles "Add Book" text*/
 h1{
     position: fixed;
-    top: 20%;
+    top: 15%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
@@ -13,7 +13,7 @@ h3{
     font-weight: bold;
     text-align: center;
     position: fixed;
-    top: 25%;
+    top: 22%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
@@ -36,7 +36,7 @@ h3{
 /* Positions and Styles Add Book Button */
 .addBookbtn {
     position: fixed;
-    top: 77%;
+    top: 80%;
     left: 50%;
     transform: translate(-50%, -60%);
     border: none;
@@ -64,7 +64,7 @@ h3{
 .home {
     position: fixed;
     top: 82%;
-    left: 48%;
+    left: 40%;
     transform: translate(-50%, -50%);
 }
 
@@ -72,7 +72,7 @@ h3{
 .support {
     position: fixed;
     top: 82%;
-    left: 52%;
+    left: 60%;
     transform: translate(-50%, -50%);
 }
 
@@ -108,7 +108,7 @@ a:hover{text-decoration: underline;}
 /*Positions Book Status text over username field*/
 .status{
     position: fixed;
-    top: 66%;
+    top: 68%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
@@ -132,7 +132,7 @@ input[type=author]{
 /* Positions summary field*/
 textarea[type=summary]{
     position: fixed;
-    top: 56%;
+    top: 58%;
     left: 50%;
     transform: translate(-50%, -50%);
     }
@@ -140,7 +140,7 @@ textarea[type=summary]{
 /* Positions status field*/
 select[type=status]{
     position: fixed;
-    top: 70%;
+    top: 72%;
     left: 50%;
     transform: translate(-50%, -50%);
     }
