@@ -8,9 +8,6 @@ const createNewBook = async (req, res) => {
     if(duplicate) return res.render('../views/books.ejs', {message: 'Book Already Exists'});
 
 
-    
-
-
     try{
 
         // //create book
