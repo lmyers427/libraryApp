@@ -97,3 +97,31 @@ body{
 
 }
 
+@media screen and (max-width: 1024px)
+{
+    .cards_wrap .card_item{
+        width: 33%;
+    }
+}
+
+@media screen and (max-width: 768px)
+{
+    .cards_wrap .card_item{
+        width: 50%;
+    }
+    .wrapper .header{
+        font-size: 16px;
+        height: 60px;
+    }
+}
+
+@media screen and (max-width: 568px)
+{
+    .cards_wrap .card_item{
+        width: 100%;
+    }
+    .wrapper .header{
+        font-size: 14px;
+    }
+}
+
