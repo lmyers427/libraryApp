@@ -6,17 +6,40 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Group 1</title>
-    <link rel="stylesheet" type="text/css" href="/css/home.css" />
+    <link rel="stylesheet" type="text/css" href="/css/search.css" />
 </head>
 <body>
-    <div class = "bookshelf"></div>
 
-    <h1>Search Result</h1>
+    <div class="wrapper">
+        <div class="header">Search Results
+        <a href="home">return Home</a>
+        </div>
+        <div class="cards_wrap">   
+                
+                 <% BookResults.forEach( function (property) { %>
+                 
+                    <div class="card_item">  
+                    <div class="card_inner">
+                         <div class="image">
+                            BookImage-coming soon... 
+                        </div>
+                        <div class="title">   
+                        Title: <%= property.title %>
+                        </div> 
+                        <div class="author">
+                        Author: <%=property.author %>
+                        </div>
+                        <div class="summary">
+                        Summary:<%=property.summary %>
+                        </div>
+                     </div>
+                    </div> 
+                 <% }) %>
 
+                
+            </div>
+
+    </div>
 </body>
 
-<footer>
-    <span class = "support"><a href="support">Support</a></span><br><br>
-    <span class="books"><a href="books">Admin</a></span>
-</footer>
 </html>

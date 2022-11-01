@@ -61,7 +61,8 @@ const getBooks = async (req, res) => {
 
     //Json response with all the existing results for search criteria
     //Will change to display search criteria
-    res.status(201).json(BookResult);
+   // res.status(201).json(BookResult);
+   res.render('../views/search.ejs', { BookResults: BookResult });
     }
    
     //If the user is searching by title
@@ -73,8 +74,12 @@ const getBooks = async (req, res) => {
 
     //Json response with all the existing results for search criteria
     //Will change to display search criteria
-    res.status(201).json(BookResult);
+    //res.status(201).json(BookResult);
     
+    //testing render display
+    res.render('../views/search.ejs', { BookResults: BookResult });
+
+       
     
     }
 
