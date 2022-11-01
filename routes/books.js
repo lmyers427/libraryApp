@@ -2,16 +2,25 @@ const express = require('express');
 const router = express.Router();
 const path = require('path');
 const bookController = require('../controllers/bookController');
+const ROLES_LIST = require('../config/roles_list');
+const verifyRoles = require('../middleware/verifyRoles');
+
+
+
 
 
 router.get('/', (req, res) => {
-    let message = req.session.message;
-    res.render(path.join(__dirname, '..', 'views', 'books'), {message: message}); //with ejs updated to render
+    
+    res.render(path.join(__dirname, '..', 'views', 'books'), {message: ' '}); //with ejs updated to render
     
 });
 
-router.post('/', bookController.createNewBook);
+//verifies roles before allowing user to create a new book and add to database
 
-router.delete('/', bookController.deleteBook);
+router.post('/', verifyRoles(ROLES_LIST.Admin, ROLES_LIST.Editor), bookController.createNewBook);
+
+
+//verify roles before allowing user to delete book from database. 
+router.delete('/', verifyRoles(ROLES_LIST.Admin, ROLES_LIST.Editor), bookController.deleteBook);
 
 module.exports = router;
