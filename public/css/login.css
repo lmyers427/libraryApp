@@ -2,7 +2,9 @@
 h1{
     position: fixed;
     font-weight: bolder;
-    font-size: 25px;
+    font-size: 30px;
+    inline-size: 200px;
+    text-align: center;
     top: 15%;
     left: 50%;
     transform: translate(-50%, -50%);

@@ -63,7 +63,7 @@ h3{
 /* Positions home link*/
 .home {
     position: fixed;
-    top: 82%;
+    top: 86%;
     left: 40%;
     transform: translate(-50%, -50%);
 }
@@ -71,7 +71,7 @@ h3{
 /* Positions support link*/
 .support {
     position: fixed;
-    top: 82%;
+    top: 86%;
     left: 60%;
     transform: translate(-50%, -50%);
 }
