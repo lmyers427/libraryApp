@@ -3,7 +3,8 @@ const app = express();
 
 const logOut = async (req, res) => {
 
-    req.session.user = null
+    req.session.user = null;
+    req.session.role = null;
     req.session.save(function (err) {
       if (err) next(err)
   
