@@ -5,7 +5,11 @@ const createNewBook = async (req, res) => {
 
     const duplicate = await Book.findOne({title: req.body.title}).exec();
 
-    if(duplicate) return res.render('../views/books.ejs', {message: req.session.message = 'Book Already Exists'});
+    if(duplicate) return res.render('../views/books.ejs', {message: 'Book Already Exists'});
+
+
+    
+
 
     try{
 
@@ -28,7 +32,7 @@ const createNewBook = async (req, res) => {
         const result = await newBook.save();
     
 
-        res.render('../views/books.ejs', {message: req.session.message = 'Book Successfully added to the database'});
+        res.render('../views/books.ejs', {message: 'Book Successfully added to the database'});
     
     
     }catch(error){
@@ -40,28 +44,35 @@ const createNewBook = async (req, res) => {
 
 const getBooks = async (req, res) => {
 
-    
+    //Collect query string from HTML form 
     const {search, searchOption} = req.query; //may change depending on HTML
     
-    console.log(search);
-    console.log(searchOption);
 
+    //If nothing was included in the search criteria
     if(!search) return res.status(400).json({'message':'Nothing in Search'});
     
+
+    //if user is searching by Author
     if(searchOption == "author") 
     {
     //Fetch existing books in database associated with that author 
-
     const BookResult = await Book.find({author: search });
 
+
+    //Json response with all the existing results for search criteria
+    //Will change to display search criteria
     res.status(201).json(BookResult);
     }
-
+   
+    //If the user is searching by title
     else if(searchOption == "title")
     {
 
+     //Fetch existing books in database associated with that title     
     const BookResult = await Book.find({title: search});
 
+    //Json response with all the existing results for search criteria
+    //Will change to display search criteria
     res.status(201).json(BookResult);
     
     
