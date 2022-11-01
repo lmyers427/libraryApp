@@ -5,7 +5,11 @@ const createNewBook = async (req, res) => {
 
     const duplicate = await Book.findOne({title: req.body.title}).exec();
 
-    if(duplicate) return res.render('../views/books.ejs', {message: req.session.message = 'Book Already Exists'});
+    if(duplicate) return res.render('../views/books.ejs', {message: 'Book Already Exists'});
+
+
+    
+
 
     try{
 
@@ -28,8 +32,11 @@ const createNewBook = async (req, res) => {
         const result = await newBook.save();
     
 
-        res.render('../views/books.ejs', {message: req.session.message = 'Book Successfully added to the database'});
-    
+
+        
+        console.log(result); // testing log to verify book created correctly
+
+        res.render('../views/books.ejs', {message: 'Book Successfully added to the database'});
     
     }catch(error){
 
@@ -40,30 +47,42 @@ const createNewBook = async (req, res) => {
 
 const getBooks = async (req, res) => {
 
-    
+    //Collect query string from HTML form 
     const {search, searchOption} = req.query; //may change depending on HTML
     
-    console.log(search);
-    console.log(searchOption);
 
+    //If nothing was included in the search criteria
     if(!search) return res.status(400).json({'message':'Nothing in Search'});
     
+
+    //if user is searching by Author
     if(searchOption == "author") 
     {
     //Fetch existing books in database associated with that author 
-
     const BookResult = await Book.find({author: search });
 
-    res.status(201).json(BookResult);
-    }
 
+    //Json response with all the existing results for search criteria
+    //Will change to display search criteria
+   // res.status(201).json(BookResult);
+   res.render('../views/search.ejs', { BookResults: BookResult });
+    }
+   
+    //If the user is searching by title
     else if(searchOption == "title")
     {
 
+     //Fetch existing books in database associated with that title     
     const BookResult = await Book.find({title: search});
 
-    res.status(201).json(BookResult);
+    //Json response with all the existing results for search criteria
+    //Will change to display search criteria
+    //res.status(201).json(BookResult);
     
+    //testing render display
+    res.render('../views/search.ejs', { BookResults: BookResult });
+
+       
     
     }
 
@@ -75,7 +94,8 @@ const getBooks = async (req, res) => {
 }
 
 const deleteBook = async (req, res) => {
-    if (!req?.body?.id) return res.status(400).json({ 'message': 'Book title required.' });
+    console.log(req);
+    if (!req?.body?.title) return res.status(400).json({ 'message': 'Book title required.' });
 
     const book = await Book.findOne({ title: req.body.title }).exec();
     if (!book) {
