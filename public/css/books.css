@@ -147,7 +147,7 @@ select[type=status]{
     transform: translate(-50%, -50%);
     }
 
-.deltitle{
+.delTitle{
     position: fixed;
     top: 75%;
     left: 50%;
