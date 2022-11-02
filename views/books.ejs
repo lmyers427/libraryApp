@@ -21,7 +21,7 @@ for Users who have the Admin or Editor roles eventually-->
 
 <!-- <div class = "addBook"> -->
 
-    <form action="/books" method="POST" id="addbook">
+    <form action="/books/add" method="POST" id="addbook">
 
         <div class="title">
             <label for="title"><b>Title</b></label>
@@ -64,7 +64,19 @@ for Users who have the Admin or Editor roles eventually-->
 
     <!-- </div> -->
 
-    
+    <!-- This will test our delete book route for admin use-->
+    <div class="deletebook">
+        <form action="/books/delete" method="POST">
+            <input type="hidden" name="_method" value="delete">
+            <div>
+                <label for="title2"><b>Title</b></label>            
+            </div>            
+                <input type="title2" id="title2" placeholder="Enter Book Title" name="title2" required>
+            
+                <button type="submit" class="delBookBtn">Delete Book</button>
+                   
+        </form>
+    </div>
 </body>
 
 

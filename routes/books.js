@@ -17,10 +17,10 @@ router.get('/', (req, res) => {
 
 //verifies roles before allowing user to create a new book and add to database
 
-router.post('/', verifyRoles(ROLES_LIST.Admin, ROLES_LIST.Editor), bookController.createNewBook);
+router.post('/add', verifyRoles(ROLES_LIST.Admin, ROLES_LIST.Editor), bookController.createNewBook);
 
 
 //verify roles before allowing user to delete book from database. 
-router.delete('/', verifyRoles(ROLES_LIST.Admin, ROLES_LIST.Editor), bookController.deleteBook);
+router.post('/delete', verifyRoles(ROLES_LIST.Admin, ROLES_LIST.Editor), bookController.deleteBook);
 
 module.exports = router;

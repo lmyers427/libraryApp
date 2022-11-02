@@ -91,10 +91,13 @@ const getBooks = async (req, res) => {
 }
 
 const deleteBook = async (req, res) => {
-    console.log(req);
-    if (!req?.body?.title) return res.status(400).json({ 'message': 'Book title required.' });
 
-    const book = await Book.findOne({ title: req.body.title }).exec();
+    
+    if (!req?.body?.title2) return res.status(400).json({ 'message': 'Book title required.' });
+
+    const bookTitle = req.body.title2;
+
+    const book = await Book.findOne({ title: bookTitle }).exec();
     if (!book) {
         return res.status(204).json({ "message": `No book found matching title ${req.body.title}.` });
     }
