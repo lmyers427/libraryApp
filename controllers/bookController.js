@@ -91,11 +91,6 @@ const getBooks = async (req, res) => {
 }
 
 const deleteBook = async (req, res) => {
-<<<<<<< HEAD
-=======
-    console.log(req);
-    if (!req?.body?.title) return res.status(400).json({ 'message': 'Book title required.' });
->>>>>>> 1fbd52d506f6d4e804cfb5c67382579848c2fb26
 
     
     if (!req?.body?.title2) return res.status(400).json({ 'message': 'Book title required.' });
