@@ -40,6 +40,7 @@ const getBooks = async (req, res) => {
     
     //if user is searching by Author
     if(searchOption == "author") {
+        
     //Fetch existing books in database associated with that author 
     const BookResult = await Book.find({author: search });
     //Json response with all the existing results for search criteria
@@ -47,7 +48,7 @@ const getBooks = async (req, res) => {
     // res.status(201).json(BookResult);
     res.render('../views/search.ejs', { BookResults: BookResult });
     }
-   
+
     //If the user is searching by title
     else if(searchOption == "title"){
      //Fetch existing books in database associated with that title     
@@ -67,14 +68,19 @@ const getBooks = async (req, res) => {
 }
 
 const deleteBook = async (req, res) => {
+
+    // verify information was entered
     if (!req?.body?.title2) return res.status(400).json({ 'message': 'Book title required.' });
 
     const bookTitle = req.body.title2;
 
+    // search for book in database
     const book = await Book.findOne({ title: bookTitle }).exec();
     if (!book) {
         return res.status(204).json({ "message": `No book found matching title ${req.body.title}.` });
     }
+
+    // delete book in database
     const result = await book.deleteOne(); 
     res.json(result);
     
