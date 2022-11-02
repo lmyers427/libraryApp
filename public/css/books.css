@@ -18,8 +18,6 @@ h3{
     transform: translate(-50%, -50%);
 }
 
-
-
 /* Bookshelf background (brown box) */
 .bookshelf{
     height: 600px;
@@ -59,8 +57,6 @@ h3{
     transform: translate(-50%, -50%);
     box-shadow: 5px 2px 2px #5C4033;
 }
-
-
 
 /* Positions home link*/
 .home {
@@ -147,6 +143,7 @@ select[type=status]{
     transform: translate(-50%, -50%);
     }
 
+/* Positions and styles "Delete Book" text  */
 .delTitle{
     position: fixed;
     top: 75%;
@@ -154,13 +151,14 @@ select[type=status]{
     transform: translate(-50%, -50%);
 }
 
+/* Positions delete field*/
 input[type = deltitle]{
     position: fixed;
     top: 80%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
-
+/* Delete Book Button */
 .delBookBtn {
     position: fixed;
     top: 87%;
