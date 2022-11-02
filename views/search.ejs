@@ -9,39 +9,53 @@
     <link rel="stylesheet" type="text/css" href="/css/search.css" />
 </head>
 <body>
-
+    <div class ="bookshelf">
     <div class="wrapper">
-        <div class="header">Search Results
-        <a href="home">return Home</a>
-        </div>
+        <h1>Search Results</h1>
+        
         <div class="cards_wrap">   
                 
-                 <% BookResults.forEach( function (property) { %>
-                 
+                <% BookResults.forEach( function (property) { %>
+                
                     <div class="card_item">  
                     <div class="card_inner">
-                         <div class="image">
+                        <div class="image">
                             BookImage-coming soon... 
                         </div>
+                        
                         <div class="title">   
                         Title: <%= property.title %>
                         </div> 
                         <div class="author">
                         Author: <%=property.author %>
                         </div>
+<<<<<<< HEAD
                         
                         <!-- <div class="summary">
+=======
+                        <div class="summary">
+>>>>>>> 1fbd52d506f6d4e804cfb5c67382579848c2fb26
                         Summary:<%=property.summary %>
                         </div> 
-                        -->
-                     </div>
+                        <div>
+                            <button>Add to Favorites</button>
+                            <button>Rent</button>
+                        </div>
+                        
+                    </div>
                     </div> 
-                 <% }) %>
+                <% }) %>
 
                 
             </div>
 
     </div>
+    </div>
+    <span class="return"><a href="home">Return to Home Page</a></span>
 </body>
+
+<footer>
+    <span class="return"><a href="home">Return to Home Page</a></span>
+</footer>
 
 </html>

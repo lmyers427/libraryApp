@@ -8,9 +8,6 @@ const createNewBook = async (req, res) => {
     if(duplicate) return res.render('../views/books.ejs', {message: 'Book Already Exists'});
 
 
-    
-
-
     try{
 
         // //create book
@@ -32,8 +29,11 @@ const createNewBook = async (req, res) => {
         const result = await newBook.save();
     
 
+
+        
+        console.log(result); // testing log to verify book created correctly
+
         res.render('../views/books.ejs', {message: 'Book Successfully added to the database'});
-    
     
     }catch(error){
 
@@ -91,6 +91,11 @@ const getBooks = async (req, res) => {
 }
 
 const deleteBook = async (req, res) => {
+<<<<<<< HEAD
+=======
+    console.log(req);
+    if (!req?.body?.title) return res.status(400).json({ 'message': 'Book title required.' });
+>>>>>>> 1fbd52d506f6d4e804cfb5c67382579848c2fb26
 
     
     if (!req?.body?.title2) return res.status(400).json({ 'message': 'Book title required.' });

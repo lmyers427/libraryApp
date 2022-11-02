@@ -1,3 +1,23 @@
+h1{
+    text-align: center;
+    color: #fff;
+    padding-top: 1em;
+}
+
+.return{
+    text-align: center;
+    text-decoration: none;
+    position: fixed;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+a:link{text-decoration: none;}
+a:visited{text-decoration: none;}
+a:hover{text-decoration: underline;}
+
+
 *{
     margin: 0;
     padding: 0;
@@ -46,26 +66,21 @@ body{
 }
 
 .cards_wrap .card_inner{
-  background : #eeeff4;
-   border-radius: 5px;
-   padding: 35px 20px;
-   min-width: 225px;
-   min-height: 315px;
-   width: 100%;
-   
-   
-
+    background : #eeeff4;
+    border-radius: 5px;
+    padding: 35px 20px;
+    min-width: 225px;
+    min-height: 315px;
+    width: 100%;
 }
 
 .cards_wrap .card_inner .image{
-
     width: 80px;
     height: 80px;
     margin-bottom: 5px;
     color:#7b8ca0;
     font-size: 15px;
     font-weight: 100;
-
 }
 
 
