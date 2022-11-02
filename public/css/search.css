@@ -65,26 +65,21 @@ body{
 }
 
 .cards_wrap .card_inner{
-  background : #eeeff4;
-   border-radius: 5px;
-   padding: 35px 20px;
-   min-width: 225px;
-   min-height: 315px;
-   width: 100%;
-   
-   
-
+    background : #eeeff4;
+    border-radius: 5px;
+    padding: 35px 20px;
+    min-width: 225px;
+    min-height: 315px;
+    width: 100%;
 }
 
 .cards_wrap .card_inner .image{
-
     width: 80px;
     height: 80px;
     margin-bottom: 5px;
     color:#7b8ca0;
     font-size: 15px;
     font-weight: 100;
-
 }
 
 
