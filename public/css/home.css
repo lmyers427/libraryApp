@@ -7,13 +7,12 @@ h1{
     font-size: 25px;
 }
 
-
-
 /* Link Styles */
 a:link{text-decoration: none;}
 a:visited{text-decoration: none;}
 a:hover{text-decoration: underline;}
 
+/* Bookshelf background (brown box) */
 .bookshelf{
     height: 600px;
     width:400px;
@@ -26,32 +25,19 @@ a:hover{text-decoration: underline;}
     box-shadow: 5px 5px 5px #5C4033;
 }
 
-
-
-/* Set a style for all buttons
-Commented out because multiple buttons on page */
-/* button {
-position: fixed;
-top: 75%;
-left: 50%;
-transform: translate(-50%, -50%);
-border: none;
-cursor: pointer;
-} */
-
-.search {
-top: 30%;
-left: 40%;
-transform: translate(-50%, -50%);
-position: fixed;
-width: auto;
-padding: 10px 18px;
-border-radius: 30px;
-background-color: rgb(236, 231, 231);
-
+/* Style and position for search bar */
+.search{
+    top: 30%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+    position: fixed;
+    width: auto;
+    padding: 10px 18px;
+    border-radius: 30px;
+    background-color: rgb(236, 231, 231);
 }
 
-/* Extra style for the logout button (red) */
+/* Style and position for the logout button (red) */
 .logoutbtn {
 width: auto;
 padding: 10px 18px;
@@ -80,6 +66,7 @@ cursor: pointer;
 
 }
 
+/* Style and Position for search option drop down */
 .searchOption {
     position: fixed;
     top: 30%;
@@ -91,7 +78,7 @@ cursor: pointer;
     background-color: rgb(236, 231, 231);
 }
 
-
+/* Positions search bar field*/
 input[type=search]{
     position: fixed;
     top: 30%;

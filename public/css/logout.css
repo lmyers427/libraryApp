@@ -1,3 +1,4 @@
+/* Burns and Mobile Text*/
 h1{
     position: fixed;
     top: 15%;
@@ -5,6 +6,7 @@ h1{
     transform: translate(-50%, -50%);
 }
 
+/* Displays message saying you have logged out */
 h3{
     color: rgb(241, 245, 16);
     inline-size: 200px;
@@ -16,6 +18,7 @@ h3{
     transform: translate(-50%, -50%);
 }
 
+/* Bookshelf background (brown box) */
 .bookshelf{
     height: 600px;
     width:400px;
@@ -29,18 +32,17 @@ h3{
 }
 
 /* The "logout" text */
-.loginPage {
+.loginPage{
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    }
+}
 
     
 /* Change styles for span and cancel button on extra small screens */
-@media screen and (max-width: 500px) {
-
-    .cancelbtn {
+@media screen and (max-width: 500px){
+    .cancelbtn{
         width: 100%;
     }
-    }
+}
