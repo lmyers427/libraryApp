@@ -171,12 +171,12 @@ a:hover{text-decoration: underline;}
 }
 
 /* Change styles for span and submit button on extra small screens */
-@media screen and (max-width: 500px) {
-    .loginbtn {
+@media screen and (max-width: 500px){
+    .loginbtn{
         display: block;
         float: none;
     }
-    .cancelbtn {
+    .cancelbtn{
         width: 100%;
     }
 }

@@ -40,8 +40,6 @@ app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 
 
-
-
 app.all('*', (req, res) => {
     res.status(404);
     if (req.accepts('html')) {

@@ -1,6 +1,5 @@
 const User = require('../model/Users');
 const bcrypt = require('bcrypt');
-
 const NewUser = async (req, res) => {
 
     const {username, password} = req.body; //may change depending on HTML
@@ -34,15 +33,10 @@ const NewUser = async (req, res) => {
         res.render('../views/login.ejs', {message: req.session.message = 'User successfully created. Please Login'});
     
     }catch(error){
-
         res.status(500).render('../views/login.ejs', {message: req.session.message = 'Failed to create new user'});
-
     }
-
-
 }
 
 module.exports = {
-
     NewUser
 }

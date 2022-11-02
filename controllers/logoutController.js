@@ -1,6 +1,5 @@
 const express = require('express');
 const app = express();
-
 const logOut = async (req, res) => {
 
     req.session.user = null;
@@ -10,23 +9,19 @@ const logOut = async (req, res) => {
   
       // regenerate the session, which is good practice to help
       // guard against forms of session fixation
-    //   req.session.regenerate(function (err) {
-    //     if (err) next(err)
-    //     res.redirect('/')
-    //   })
+      //   req.session.regenerate(function (err) {
+      //     if (err) next(err)
+      //     res.redirect('/')
+      //   })
     })
 
     req.session.message =  "Thank you! You have successfully logged out";
     
+    res.render('../views/logout.ejs' , { message: req.session.message });
 
-  res.render('../views/logout.ejs' , { message: req.session.message });
-
-   
 };
 
 module.exports = {
-
     logOut
-
 }
 
