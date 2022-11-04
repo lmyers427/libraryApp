@@ -21,8 +21,13 @@
                     <div class="card_item">  
                     <div class="card_inner">
                          <div class="image">
-                            BookImage-coming soon... 
-                        </div>
+                            <% if (property.image) { %>
+                                property.image
+                             <% } else { %>
+                                Book Image Coming Soon...
+                             <% } %>
+
+                         </div>
                         <div class="title">   
                             Title: <%= property.title %>
                         </div> 
