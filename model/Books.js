@@ -4,7 +4,7 @@ const { stringify } = require('uuid');
 const Schema = mongoose.Schema;
 const userSchema = require('../model/Users');
 
-const coverImageBasePath = 'uploads/bookCover';
+const coverImageBasePath = 'uploads/bookCovers';
 
 const bookSchema = new Schema({
 
@@ -21,6 +21,7 @@ const bookSchema = new Schema({
     coverImageName: {
 
         type: String,
+        required: true
     },
     summary: {
 

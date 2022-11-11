@@ -1,31 +1,23 @@
 const Book = require('../model/Books');
 const bcrypt = require('bcrypt');
+const removeBookCover = require('../middleware/removeBookCover');
+
 
 
 const createNewBook = async (req, res) => {
 
     //file for cover image, if it is equal to null then the file is null
+    //req.file is sent from built-in middleware from multi
+    const fileName = req.file != null ? req.file.filename : null;
 
-   //const fileName = req.file != null ? req.file.filename : null;
-
-
-
-   console.log(req.file);
 
 
     const duplicate = await Book.findOne({title: req.body.title}).exec();
     if(duplicate) return res.render('../views/books.ejs', {message: 'Book Already Exists'});
 
     try{
-        // //create book
-        // const result = await Book.create({
-        //     "title": title,
-        //     "author": author,
-        //     "summary": summary,
-        //     "status": status
-        // });
-        //test out before posting to Database :)
-
+        
+        //Create a newBook instance 
         const newBook = new Book();       
         newBook.title = req.body.title;
         newBook.author = req.body.author;
@@ -36,13 +28,18 @@ const createNewBook = async (req, res) => {
         
         //now that our book is successfully created 
         //we will save it to the Database
-        console.log(newBook);
-        //const result = await newBook.save();
+       
+        const result = await newBook.save();
         
-        //console.log(result); // testing log to verify book created correctly
+        console.log(result); // testing log to verify book created correctly
         res.render('../views/books.ejs', {message: 'Book Successfully added to the database'});
     
     }catch(error){
+        if(newBook.coverImageName != null){
+        //helper function from middleware to remove image 
+        //from saved public/uploads/bookCovers folder    
+        removeBookCover(newBook.coverImageName)
+        }
         res.status(500)
     }
 }
