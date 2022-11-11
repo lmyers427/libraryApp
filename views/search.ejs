@@ -22,11 +22,12 @@
                     <div class="card_inner">
                          <div class="image">
                             <% if (property.coverImagePath) { %>
-                                property.coverImagePath
+                                <img height="150" width="100" src="<%=property.coverImagePath %>">
+
                              <% } else { %>
                                 Book Image Coming Soon...
                              <% } %>
-
+                             
                          </div>
                         <div class="title">   
                             Title: <%= property.title %>

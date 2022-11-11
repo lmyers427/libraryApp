@@ -88,7 +88,10 @@ const deleteBook = async (req, res) => {
     if (!book) {
         return res.status(204).json({ "message": `No book found matching title ${req.body.title}.` });
     }
-    const result = await book.deleteOne(); 
+    const result = await book.deleteOne();
+    
+    //removes bookCover image from public file once deleted 
+    removeBookCover(book.coverImageName); 
     res.json(result);
     
     // for testing
