@@ -107,7 +107,7 @@ a:hover{text-decoration: underline;}
 .status{
     position: fixed;
     top: 58%;
-    left: 50%;
+    left: 30%;
     transform: translate(-50%, -50%);
 }
 
@@ -139,9 +139,27 @@ textarea[type=summary]{
 select[type=status]{
     position: fixed;
     top: 62%;
-    left: 50%;
+    left: 30%;
     transform: translate(-50%, -50%);
     }
+
+/*Position of Cover item*/
+.cover{
+    position: fixed;
+    top: 58%;
+    left: 60%;
+    transform: translate(-50%, -50%);
+}
+
+/*Position of Choose file */
+
+input[type=file]{
+    position: fixed;
+    top: 62%;
+    left: 85%;
+    transform: translate(-50%, -50%);
+    }
+
 
 /* Positions and styles "Delete Book" text  */
 .delTitle{
