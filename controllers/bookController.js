@@ -1,7 +1,18 @@
 const Book = require('../model/Books');
 const bcrypt = require('bcrypt');
 
+
 const createNewBook = async (req, res) => {
+
+    //file for cover image, if it is equal to null then the file is null
+
+   //const fileName = req.file != null ? req.file.filename : null;
+
+
+
+   console.log(req.file);
+
+
     const duplicate = await Book.findOne({title: req.body.title}).exec();
     if(duplicate) return res.render('../views/books.ejs', {message: 'Book Already Exists'});
 
@@ -20,10 +31,15 @@ const createNewBook = async (req, res) => {
         newBook.author = req.body.author;
         newBook.summary = req.body.summary;
         newBook.status = req.body.status;
-        //res.status(201).json(newBook);
-        const result = await newBook.save();
+        //for saving image path to database
+        newBook.coverImageName = fileName;
         
-        console.log(result); // testing log to verify book created correctly
+        //now that our book is successfully created 
+        //we will save it to the Database
+        console.log(newBook);
+        //const result = await newBook.save();
+        
+        //console.log(result); // testing log to verify book created correctly
         res.render('../views/books.ejs', {message: 'Book Successfully added to the database'});
     
     }catch(error){

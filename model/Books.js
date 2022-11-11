@@ -1,7 +1,10 @@
 const mongoose = require('mongoose');
+const path = require('path');
 const { stringify } = require('uuid');
 const Schema = mongoose.Schema;
 const userSchema = require('../model/Users');
+
+const coverImageBasePath = 'uploads/bookCover';
 
 const bookSchema = new Schema({
 
@@ -15,7 +18,7 @@ const bookSchema = new Schema({
         type: String,
         required: true
     },
-    image: {
+    coverImageName: {
 
         type: String,
     },
@@ -43,4 +46,16 @@ const bookSchema = new Schema({
 
 });
 
+//Helper function to create a property to reference coverImagePath 
+//to pull the images from the public/uploads/BookCover path and 
+//appends the coverImageName from the specific book to the reference
+bookSchema.virtual('coverImagePath').get(function() {
+    if(this.coverImageName != null){
+
+        return path.join('/', coverImageBasePath, this.coverImageName)
+
+    }
+})
+
 module.exports = mongoose.model('Book', bookSchema);
+module.exports.coverImageBasePath = coverImageBasePath;
