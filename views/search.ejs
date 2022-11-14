@@ -21,8 +21,14 @@
                     <div class="card_item">  
                     <div class="card_inner">
                          <div class="image">
-                            BookImage-coming soon... 
-                        </div>
+                            <% if (property.coverImagePath) { %>
+                                <img height="150" width="100" src="<%=property.coverImagePath %>">
+
+                             <% } else { %>
+                                Book Image Coming Soon...
+                             <% } %>
+                             
+                         </div>
                         <div class="title">   
                             Title: <%= property.title %>
                         </div> 
