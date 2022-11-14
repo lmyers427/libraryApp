@@ -24,7 +24,11 @@ const upload = multer({
 
 
 
-router.get('/', (req, res) => {
+router.get('/', verifyRoles(ROLES_LIST.Admin, ROLES_LIST.Editor), (req, res) => {
+
+    //checks if session user has been assigned or if user has logged in. If no, routes user back to login page to login first
+    if(!req.session.user) return res.render(path.join(__dirname, '..', 'views', 'login'), {message: "Please Login"} );
+
     
     res.render(path.join(__dirname, '..', 'views', 'books'), {message: ' '}); //with ejs updated to render
     
@@ -41,4 +45,6 @@ router.post('/add', verifyRoles(ROLES_LIST.Admin, ROLES_LIST.Editor), upload.sin
 //verify roles before allowing user to delete book from database. 
 router.post('/delete', verifyRoles(ROLES_LIST.Admin, ROLES_LIST.Editor), bookController.deleteBook);
 
+//verify roles before allowing user to update book from database.
+router.post('/update', verifyRoles(ROLES_LIST.Admin, ROLES_LIST.Editor), upload.single('cover2'), bookController.updateBook);
 module.exports = router;

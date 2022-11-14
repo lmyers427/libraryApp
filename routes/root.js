@@ -9,8 +9,8 @@ router.get('^/$|/home(.html)?', (req, res) => {
 
     //assigns user message on Home Page to welcome logged in user
     let user = req.session.user;
-    
-    res.render(path.join(__dirname, '..', 'views', 'home'), {user: user}); //updated for ejs
+
+    res.render(path.join(__dirname, '..', 'views', 'home'), {user: user, message: ''}); //updated for ejs
 });
 
 

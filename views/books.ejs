@@ -78,6 +78,25 @@ for Users who have the Admin or Editor roles eventually-->
                    
         </form>
     </div>
+
+    <!-- this will test updating an existing book in the database -->
+    <div class="updatebook" >
+        <form action="/books/update" method="POST" enctype="multipart/form-data">
+            <input type="hidden" name="_method" value="put">
+            <div>
+                <label for="title3"><b>Title</b></label>            
+            </div>            
+                <input type="title3" id="title3" placeholder="Enter Book Title" name="title3" required>
+
+                <div class="cover2">
+                    <label for="cover2">Cover</label>
+                </div>
+                <input type="file" name="cover2">
+
+                <button type="submit" class="updateBookBtn">Update Book</button>
+                   
+        </form>
+    </div>
 </body>
 
 <footer>
