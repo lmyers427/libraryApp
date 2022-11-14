@@ -14,6 +14,10 @@
 
     <h1>Welcome <%= user %> </h1>
 
+    <!-- If there is an error message this is where it will display -->
+        <h3><%=message%></h3>
+    
+
     <form action = "/search" method= "GET" id = "search">
 
         <!-- This will help determine if search is for author or title -->
