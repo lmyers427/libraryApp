@@ -24,7 +24,7 @@ const createNewBook = async (req, res) => {
         newBook.summary = req.body.summary;
         newBook.status = req.body.status;
         //for saving image path to database
-        newBook.coverImageName = fileName;
+        newBook.coverImageName = fileName; // jpeg, png, gif accepted file types
         
         //now that our book is successfully created 
         //we will save it to the Database
