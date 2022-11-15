@@ -18,7 +18,7 @@ const NewTicket = async (req, res) => {
         res.render('../views/home.ejs', {message: req.session.message = 'Ticket successfully created'});
     
     }catch(error){
-        res.status(500).render('../views/home.ejs', {message: req.session.message = 'Failed to create new user'});
+        res.status(500).render('../views/home.ejs', {message: req.session.message = 'Failed to create ticket'});
     }
 }
 
