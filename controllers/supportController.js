@@ -1,4 +1,4 @@
-const Support = require('../model/support');
+const Support = require('../model/Support');
 const NewTicket = async (req, res) => {
 
     const {recomendation, technicalDifficulty} = req.body; //may change depending on HTML
