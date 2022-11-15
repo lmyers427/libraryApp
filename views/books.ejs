@@ -67,9 +67,12 @@ for Users who have the Admin or Editor roles eventually-->
 
     <!-- This will test our delete book route for admin use-->
     <div class="deletebook">
+        <div class="head2">
+        <h2>Delete a Book</h2>
+        </div>
         <form action="/books/delete" method="POST">
             <input type="hidden" name="_method" value="delete">
-            <div>
+            <div class="delTitle">
                 <label for="title2"><b>Title</b></label>            
             </div>            
                 <input type="title2" id="title2" placeholder="Enter Book Title" name="title2" required>
@@ -81,9 +84,10 @@ for Users who have the Admin or Editor roles eventually-->
 
     <!-- this will test updating an existing book in the database -->
     <div class="updatebook" >
+        <h2>Add a photo</h2>
         <form action="/books/update" method="POST" enctype="multipart/form-data">
             <input type="hidden" name="_method" value="put">
-            <div>
+            <div class="updateTitle">
                 <label for="title3"><b>Title</b></label>            
             </div>            
                 <input type="title3" id="title3" placeholder="Enter Book Title" name="title3" required>
@@ -91,8 +95,9 @@ for Users who have the Admin or Editor roles eventually-->
                 <div class="cover2">
                     <label for="cover2">Cover</label>
                 </div>
-                <input type="file" name="cover2">
-
+                <label class="custom">
+                <input type="file" name="chooseFile">
+                </label>
                 <button type="submit" class="updateBookBtn">Update Book</button>
                    
         </form>
