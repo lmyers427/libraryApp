@@ -56,33 +56,33 @@ const getBooks = async (req, res) => {
     //Fetch existing books in database associated with that author 
     
     
-        const BookResult = await Book.find({author: search });
+        const BookResult = await Book.find({author: {$regex:search, $options:'i'} });
     //Json response with all the existing results for search criteria
     //Will change to display search criteria
     // res.status(201).json(BookResult);
     
         if(!BookResult){
-            let message = ";";
+
             res.render('../views/search.ejs', {message: 'There are no books with that author in the database'});
         }
 
         else{
-            res.render('../views/search.ejs', { BookResults: BookResult });
+            res.render('../views/search.ejs', { message: " ", BookResults: BookResult });
         }
     }
    
     //If the user is searching by title
     else if(searchOption == "title"){
      //Fetch existing books in database associated with that title  
-    const partialSearch = await Book.find(title.includes(search));   
-    const BookResult = await Book.find({title: search});
+      
+    const BookResult = await Book.find({title: {$regex:search, $options:'i'}});
 
     //Json response with all the existing results for search criteria
     //Will change to display search criteria
     //res.status(201).json(BookResult);
-    
+    console.log(BookResult);
     //testing render display
-    res.render('../views/search.ejs', { BookResults: BookResult });
+    res.render('../views/search.ejs', {message: " ",  BookResults: BookResult });
     }
 
     // else{
