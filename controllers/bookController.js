@@ -54,16 +54,27 @@ const getBooks = async (req, res) => {
     //if user is searching by Author
     if(searchOption == "author") {
     //Fetch existing books in database associated with that author 
-    const BookResult = await Book.find({author: search });
+    
+    
+        const BookResult = await Book.find({author: search });
     //Json response with all the existing results for search criteria
     //Will change to display search criteria
     // res.status(201).json(BookResult);
-    res.render('../views/search.ejs', { BookResults: BookResult });
+    
+        if(!BookResult){
+            let message = ";";
+            res.render('../views/search.ejs', {message: 'There are no books with that author in the database'});
+        }
+
+        else{
+            res.render('../views/search.ejs', { BookResults: BookResult });
+        }
     }
    
     //If the user is searching by title
     else if(searchOption == "title"){
-     //Fetch existing books in database associated with that title     
+     //Fetch existing books in database associated with that title  
+    const partialSearch = await Book.find(title.includes(search));   
     const BookResult = await Book.find({title: search});
 
     //Json response with all the existing results for search criteria
@@ -74,9 +85,9 @@ const getBooks = async (req, res) => {
     res.render('../views/search.ejs', { BookResults: BookResult });
     }
 
-    else{
-        res.status(201).json({message: "No search results found for given criteria"});
-    }
+    // else{
+    //     res.status(201).json({message: "No search results found for given criteria"});
+    // }
 }
 
 const deleteBook = async (req, res) => {
