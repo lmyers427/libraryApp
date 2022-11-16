@@ -61,14 +61,16 @@ const getBooks = async (req, res) => {
     //Will change to display search criteria
     // res.status(201).json(BookResult);
     
-        if(!BookResult){
+        
+        if(BookResult.length === 0) 
+        
+        {
+            res.render('../views/search.ejs', {message: 'There are no books with that author name', BookResults: BookResult});
+        
 
-            res.render('../views/search.ejs', {message: 'There are no books with that author in the database'});
         }
-
-        else{
-            res.render('../views/search.ejs', { message: " ", BookResults: BookResult });
-        }
+        else{ res.render('../views/search.ejs', { message: "Books Found", BookResults: BookResult});}
+    
     }
    
     //If the user is searching by title
@@ -77,12 +79,15 @@ const getBooks = async (req, res) => {
       
     const BookResult = await Book.find({title: {$regex:search, $options:'i'}});
 
-    //Json response with all the existing results for search criteria
-    //Will change to display search criteria
-    //res.status(201).json(BookResult);
-    console.log(BookResult);
-    //testing render display
-    res.render('../views/search.ejs', {message: " ",  BookResults: BookResult });
+    if(BookResult.length === 0) 
+        
+    {
+        res.render('../views/search.ejs', {message: 'There are no books with that title', BookResults: BookResult});
+    
+
+    }
+    else{ res.render('../views/search.ejs', { message: "Books Found", BookResults: BookResult});}
+
     }
 
     // else{
