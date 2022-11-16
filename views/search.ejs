@@ -9,12 +9,15 @@
     <link rel="stylesheet" type="text/css" href="/css/search.css" />
 </head>
 <body>
-
     <div class="wrapper">
+<<<<<<< HEAD
         <div class="header">Search Results <%=message%>
         </div>
+=======
+        <div class="header">Search Results</div>
+>>>>>>> 53e468cd52cfcaf79f1c516797aca7458a9d95b8
         <div class="cards_wrap">   
-                
+                <h3><%=message%></h3>
                  <% BookResults.forEach( function (property) { %>
                  
                     <div class="card_item">  
@@ -48,7 +51,6 @@
                  <% }) %>
             </div>
     </div>
-    
 </body>
 <footer>
     <span class="return"><a href="home">Return to Home Page</a></span>
