@@ -53,41 +53,41 @@ const getBooks = async (req, res) => {
     
     //if user is searching by Author
     if(searchOption == "author") {
-    //Fetch existing books in database associated with that author 
-    
-    
-        const BookResult = await Book.find({author: search });
-    //Json response with all the existing results for search criteria
-    //Will change to display search criteria
-    // res.status(201).json(BookResult);
-    
-        if(!BookResult){
-            let message = ";";
-            res.render('../views/search.ejs', {message: 'There are no books with that author in the database'});
-        }
+        //Fetch existing books in database associated with that author 
 
+        const BookResult = await Book.find({author: {$regex:search, $options:'i'}});
+        
+        //Json response with all the existing results for search criteria
+        //Will change to display search criteria
+        // res.status(201).json(BookResult);
+
+        if(BookResult.length=== 0) {
+            res.render('../views/search.ejs', {message: 'There are no books with that author in the database', BookResults: BookResult});
+        }
         else{
-            res.render('../views/search.ejs', { BookResults: BookResult });
+            res.render('../views/search.ejs', { message: ' ', BookResults: BookResult });
         }
     }
    
     //If the user is searching by title
     else if(searchOption == "title"){
-     //Fetch existing books in database associated with that title  
-    const partialSearch = await Book.find(title.includes(search));   
-    const BookResult = await Book.find({title: search});
+        //Fetch existing books in database associated with that title    
+        const BookResult = await Book.find({title: {$regex:search, $options:'i'}});
 
-    //Json response with all the existing results for search criteria
-    //Will change to display search criteria
-    //res.status(201).json(BookResult);
-    
-    //testing render display
-    res.render('../views/search.ejs', { BookResults: BookResult });
+        //Json response with all the existing results for search criteria
+        //Will change to display search criteria
+        //res.status(201).json(BookResult);
+        if(BookResult.length=== 0) {
+            res.render('../views/search.ejs', {message: 'There are no books with that author in the database', BookResults: BookResult});
+        }
+        else{
+            res.render('../views/search.ejs', { message: ' ', BookResults: BookResult });
+        }
     }
 
-    // else{
-    //     res.status(201).json({message: "No search results found for given criteria"});
-    // }
+     else{
+         res.status(201).json({message: "No search results found for given criteria"});
+     }
 }
 
 const deleteBook = async (req, res) => {
