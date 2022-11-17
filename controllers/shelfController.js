@@ -1,11 +1,14 @@
 const Book = require('../model/Books');
 const User = require('../model/Users');
 
+const path = require('path');
+
 
 
 
 const addBookToShelf = async (req, res) => {
-    if (!req.session.user) return res.status(400).json({ 'message': 'Login Required.' });
+
+    if(!req.session.user) return res.render(path.join(__dirname, '..', 'views', 'login'), {message: "Please Login Before Adding a Book"} );
 
     const {bookId} = req.body;
 
@@ -24,16 +27,23 @@ const addBookToShelf = async (req, res) => {
         return res.status(204).json({ "message": `No user found matching username ${usernm}.` });
     }
 
+    //console.log(user.bookshelf[bookId]);
+
+    const duplicate = user.bookshelf;
+
+    const testValue = duplicate.find(item => item._id === bookId);
+
+    console.log(testValue);
 
     try{
         
     if(book) user.bookshelf.push(book);
 
-    const result = await user.save();
+    //const result = await user.save();
 
     //for testing
 
-    res.json(user + 'updated');
+    //res.json(user + 'updated');
 
 
     }catch(error){
