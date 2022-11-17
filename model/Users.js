@@ -30,7 +30,7 @@ const userSchema = new Schema({
         type: String
     },
     //references the books from Model Schema books One to Many 
-    bookshelf :[{type: Schema.Types.ObjectId, ref: "Book"}], 
+    bookshelf :[], 
 
 });
 

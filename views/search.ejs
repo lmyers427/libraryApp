@@ -37,7 +37,11 @@
                         </div> 
 
                         <div>
-                            <button>Add to Favorites</button>
+                            <form action = "/userShelf/add" method= "POST" id = "addFav">
+                            <input type="hidden" name="_method" value="put">
+                            <input type="hidden" id="bookId" name="bookId" value=<%=property.id%>>
+                            <button type="submit">Add to Favorites</button>
+                            </form>
                             <button>Rent</button>
                         </div>
                        
