@@ -11,8 +11,11 @@
 <body>
     <div class="wrapper">
         <div class="header">Search Results</div>
+        <h3><%=message%></h3>
         <div class="cards_wrap">   
-                <h3><%=message%></h3>
+
+                <% if (typeof BookResults == 'object' && BookResults){%>
+                
                  <% BookResults.forEach( function (property) { %>
                  
                     <div class="card_item">  
@@ -48,6 +51,8 @@
                      </div>
                     </div> 
                  <% }) %>
+
+                 <% } %>
             </div>
     </div>
 </body>

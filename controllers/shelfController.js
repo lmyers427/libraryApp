@@ -31,19 +31,30 @@ const addBookToShelf = async (req, res) => {
 
     const duplicate = user.bookshelf;
 
-    const testValue = duplicate.find(item => item._id === bookId);
+    let testValue = false;
+    
+    //Find whether book already exists users bookShelf
+    duplicate.forEach((item) => {
 
-    console.log(testValue);
+        for(let key in item){
+            if(item[key].toString() == bookId){
+                
+                testValue = true;
+            }
+        }
+        
+    });
+    //if the testValue is true then the book already exists in the users bookshelf
+    if(testValue) return res.render('../views/search.ejs', {message:`Book already exists on ${req.session.user}'s shelf`});
 
     try{
         
     if(book) user.bookshelf.push(book);
 
-    //const result = await user.save();
+    const result = await user.save();
 
-    //for testing
-
-    //res.json(user + 'updated');
+   
+    return res.render('../views/search.ejs', {message:`Book Successfully Added to ${req.session.user}'s shelf`})
 
 
     }catch(error){
