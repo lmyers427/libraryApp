@@ -33,6 +33,7 @@ app.use('/register', require('./routes/register'));
 app.use('/logout', require('./routes/logout'));
 app.use('/books', require('./routes/books'));
 app.use('/search', require('./routes/search'));
+app.use('/support', require('./routes/support'));
 /*
 Added for view engine EJS
 */

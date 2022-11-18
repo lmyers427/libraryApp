@@ -55,29 +55,43 @@ const getBooks = async (req, res) => {
     if(searchOption == "author") {
         
     //Fetch existing books in database associated with that author 
-    const BookResult = await Book.find({author: search });
+    
+    
+        const BookResult = await Book.find({author: {$regex:search, $options:'i'} });
     //Json response with all the existing results for search criteria
     //Will change to display search criteria
     // res.status(201).json(BookResult);
-    res.render('../views/search.ejs', { BookResults: BookResult });
+    
+        
+        if(BookResult.length === 0) 
+        
+        {
+            res.render('../views/search.ejs', {message: 'There are no books with that author name', BookResults: BookResult});
+        }
+        else{ res.render('../views/search.ejs', { message: "Books Found", BookResults: BookResult});}
+    
     }
 
     //If the user is searching by title
     else if(searchOption == "title"){
-     //Fetch existing books in database associated with that title     
-    const BookResult = await Book.find({title: search});
+     //Fetch existing books in database associated with that title  
+      
+    const BookResult = await Book.find({title: {$regex:search, $options:'i'}});
 
-    //Json response with all the existing results for search criteria
-    //Will change to display search criteria
-    //res.status(201).json(BookResult);
+    if(BookResult.length === 0) 
+        
+    {
+        res.render('../views/search.ejs', {message: 'There are no books with that title', BookResults: BookResult});
     
-    //testing render display
-    res.render('../views/search.ejs', { BookResults: BookResult });
+
+    }
+    else{ res.render('../views/search.ejs', { message: "Books Found", BookResults: BookResult});}
+
     }
 
-    else{
-        res.status(201).json({message: "No search results found for given criteria"});
-    }
+    // else{
+    //     res.status(201).json({message: "No search results found for given criteria"});
+    // }
 }
 
 const deleteBook = async (req, res) => {
