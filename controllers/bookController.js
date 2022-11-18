@@ -24,7 +24,7 @@ const createNewBook = async (req, res) => {
         newBook.summary = req.body.summary;
         newBook.status = req.body.status;
         //for saving image path to database
-        newBook.coverImageName = fileName;
+        newBook.coverImageName = fileName; // jpeg, png, gif accepted file types
         
         //now that our book is successfully created 
         //we will save it to the Database
@@ -53,6 +53,7 @@ const getBooks = async (req, res) => {
     
     //if user is searching by Author
     if(searchOption == "author") {
+        
     //Fetch existing books in database associated with that author 
     
     
@@ -70,7 +71,7 @@ const getBooks = async (req, res) => {
         else{ res.render('../views/search.ejs', { message: "Books Found", BookResults: BookResult});}
     
     }
-   
+
     //If the user is searching by title
     else if(searchOption == "title"){
      //Fetch existing books in database associated with that title  
@@ -94,10 +95,13 @@ const getBooks = async (req, res) => {
 }
 
 const deleteBook = async (req, res) => {
+
+    // verify information was entered
     if (!req?.body?.title2) return res.status(400).json({ 'message': 'Book title required.' });
 
     const bookTitle = req.body.title2;
 
+    // search for book in database
     const book = await Book.findOne({ title: bookTitle }).exec();
     if (!book) {
         return res.status(204).json({ "message": `No book found matching title ${req.body.title}.` });
