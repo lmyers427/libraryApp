@@ -34,6 +34,7 @@ app.use('/logout', require('./routes/logout'));
 app.use('/books', require('./routes/books'));
 app.use('/search', require('./routes/search'));
 app.use('/support', require('./routes/support'));
+app.use('/userShelf', require('./routes/userShelf'));
 /*
 Added for view engine EJS
 */
