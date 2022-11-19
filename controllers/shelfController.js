@@ -4,7 +4,6 @@ const path = require('path');
 
 
 
-
 const addBookToShelf = async (req, res) => {
 
     if(!req.session.user) return res.render(path.join(__dirname, '..', 'views', 'login'), {message: "Please Login"} );
@@ -44,7 +43,7 @@ const addBookToShelf = async (req, res) => {
         
     });
     //if the testValue is true then the book already exists in the users bookshelf
-    if(testValue) return res.render('../views/search.ejs', {message:`Book already exists on ${req.session.user}'s shelf`});
+    if(testValue) return res.render('../views/search.ejs', {message:`Book already exists on ${req.session.user}'s Shelf`});
 
     try{
         
@@ -53,7 +52,7 @@ const addBookToShelf = async (req, res) => {
     const result = await user.save();
 
    
-    return res.render('../views/search.ejs', {message:`Book Successfully Added to ${req.session.user}'s shelf`})
+    return res.render('../views/search.ejs', {message:`Book Successfully Added to ${req.session.user}'s Shelf`})
 
 
     }catch(error){
@@ -66,7 +65,7 @@ const addBookToShelf = async (req, res) => {
 const getUserShelf = async (req, res) => {
 
 
-    if(!req.session.user) return res.render(path.join(__dirname, '..', 'views', 'login'), {message: "Please Login Before Adding a Book"} );
+    if(!req.session.user) return res.render(path.join(__dirname, '..', 'views', 'login'), {message: "Please Login"} );
 
    
     const usernm = req.session.user;
@@ -96,7 +95,6 @@ const getUserShelf = async (req, res) => {
 
     const bookResult = await Book.find({"_id" : {"$in" : idArr}});
 
-    console.log(bookResult);
 
     res.render('../views/userShelf.ejs', {user: req.session.user, message: " ", BookResults: bookResult});
 
@@ -104,7 +102,67 @@ const getUserShelf = async (req, res) => {
 
 }
 
+const removeFromShelf = async (req, res) => {
+
+    if(!req.session.user) return res.render(path.join(__dirname, '..', 'views', 'login'), {message: "Please Login"} );
+
+    const usernm = req.session.user;
+
+    let bookId = req.body.bookId;
+
+    const user = await User.findOne({username: usernm}).exec();
+
+    if (!user) {
+        return res.status(204).json({ "message": `No user found matching username ${usernm}.` });
+    }
+
+
+        let testValue = false;
+        
+        let i = 0;
+        let index = 0;
+        //Find whether book exists user's bookShelf
+        user.bookshelf.forEach((item) => {
+
+            
+            for(let key in item){
+                if(item[key].toString() == bookId){
+                    
+                    testValue = true;
+                    index = i;
+                }
+            }
+            i++
+
+            
+        });
+        //if the testValue is true then the book already exists in the users bookshelf
+        if(!testValue) return res.render('../views/search.ejs', {message:`Book does not exist on ${req.session.user}'s shelf`});
+    
+
+    try{
+        
+        
+        
+        user.bookshelf.splice(index,1);
+
+    
+        const result = await user.save();
+    
+       
+        return res.render('../views/userShelf.ejs', {user:req.session.user, message:`Book Successfully Removed from Shelf`})
+    
+    
+        }catch(error){
+    
+            res.status(500)
+        }
+
+
+}
+
 module.exports = {
     addBookToShelf,
-    getUserShelf
+    getUserShelf,
+    removeFromShelf
 }

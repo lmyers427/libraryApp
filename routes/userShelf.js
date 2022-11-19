@@ -8,6 +8,8 @@ router.get('/', shelfController.getUserShelf);
 
 router.post('/add', shelfController.addBookToShelf);
 
+router.post('/remove', shelfController.removeFromShelf);
+
 
 
 
