@@ -23,7 +23,7 @@ const ExistingUser = async (req, res) => {
 
      //Create a variable to validate passwords
     const validatePW = await existingUname.comparePassword(password);
-   
+
     //if Password does not match 
     if(!validatePW) return res.render('../views/login.ejs', { message: req.session.message =  `Incorrect password` });
 
