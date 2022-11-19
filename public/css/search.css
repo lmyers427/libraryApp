@@ -71,8 +71,10 @@ body{
 }
 
 .cards_wrap .card_item{
+    
     padding: 15px 25px;
     width: 25%;
+    display: flex;
 }
 
 .cards_wrap .card_inner{
@@ -114,6 +116,9 @@ body{
     font-size: 14px;
     line-height: 24px;
     color: #7b8ca0;
+    max-height: 100px;
+    overflow: auto;
+    
 }
 
 @media screen and (max-width: 1024px){
