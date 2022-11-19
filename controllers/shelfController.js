@@ -81,8 +81,20 @@ const getUserShelf = async (req, res) => {
 
     const userShelf = user.bookshelf;
 
-    console.log(userShelf);
+    let idArr = [];
 
+    userShelf.forEach((item) => {
+
+        for(let key in item){
+            if(key == '_id'){
+
+                idArr.push(item[key]);
+            }
+        }
+        
+    });
+
+    
 
     res.render('../views/userShelf.ejs', {user: req.session.user, message: " ", BookResults: userShelf});
 
