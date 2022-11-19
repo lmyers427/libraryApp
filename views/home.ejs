@@ -34,11 +34,13 @@
         
     </form>
 
-    <form>
     <div class="or">
         <label for="or"><b>OR</b></label>
     </div>
-    <button type="favorites" class="favorite">See <%= user %>'s Favorites</button>
+
+    <form action = "/userShelf" method = "GET" id = "shelf">
+    
+    <button type="submit" class="favorite">See <%= user %>'s Favorites</button>
     </form>
 
     

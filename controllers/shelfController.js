@@ -1,6 +1,5 @@
 const Book = require('../model/Books');
 const User = require('../model/Users');
-
 const path = require('path');
 
 
@@ -8,7 +7,7 @@ const path = require('path');
 
 const addBookToShelf = async (req, res) => {
 
-    if(!req.session.user) return res.render(path.join(__dirname, '..', 'views', 'login'), {message: "Please Login Before Adding a Book"} );
+    if(!req.session.user) return res.render(path.join(__dirname, '..', 'views', 'login'), {message: "Please Login"} );
 
     const {bookId} = req.body;
 
@@ -64,6 +63,34 @@ const addBookToShelf = async (req, res) => {
     
 }
 
+const getUserShelf = async (req, res) => {
+
+
+    if(!req.session.user) return res.render(path.join(__dirname, '..', 'views', 'login'), {message: "Please Login Before Adding a Book"} );
+
+   
+    const usernm = req.session.user;
+
+
+    const user = await User.findOne({username: usernm}).exec();
+
+    if (!user) {
+        return res.status(204).json({ "message": `No user found matching username ${usernm}.` });
+    }
+
+
+    const userShelf = user.bookshelf;
+
+    console.log(userShelf);
+
+
+    res.render('../views/userShelf.ejs', {user: req.session.user, message: " ", BookResults: userShelf});
+
+
+
+}
+
 module.exports = {
-    addBookToShelf
+    addBookToShelf,
+    getUserShelf
 }
