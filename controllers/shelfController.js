@@ -52,7 +52,7 @@ const addBookToShelf = async (req, res) => {
 
     const result = await user.save();
 
-   
+    
     return res.render('../views/search.ejs', {message:`Book Successfully Added to ${req.session.user}'s shelf`})
 
 
@@ -68,7 +68,7 @@ const getUserShelf = async (req, res) => {
 
     if(!req.session.user) return res.render(path.join(__dirname, '..', 'views', 'login'), {message: "Please Login Before Adding a Book"} );
 
-   
+
     const usernm = req.session.user;
 
 
