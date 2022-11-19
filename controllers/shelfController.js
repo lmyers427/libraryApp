@@ -8,7 +8,7 @@ const addBookToShelf = async (req, res) => {
 
     if(!req.session.user) return res.render(path.join(__dirname, '..', 'views', 'login'), {message: "Please Login"} );
 
-    const {bookId} = req.body;
+    const {bookId } = req.body;
 
     const book = await Book.findById(bookId).exec();
     if (!book) {
