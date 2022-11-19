@@ -94,9 +94,11 @@ const getUserShelf = async (req, res) => {
         
     });
 
-    
+    const bookResult = await Book.find({"_id" : {"$in" : idArr}});
 
-    res.render('../views/userShelf.ejs', {user: req.session.user, message: " ", BookResults: userShelf});
+    console.log(bookResult);
+
+    res.render('../views/userShelf.ejs', {user: req.session.user, message: " ", BookResults: bookResult});
 
 
 
