@@ -16,19 +16,24 @@
 
                 <% if (typeof BookResults == 'object' && BookResults){%>
                 
-                 <% BookResults.forEach( function (property) { %>
-                 
+                <% BookResults.forEach( function (property) { %>
+                
                     <div class="card_item">  
                     <div class="card_inner">
                         <div class="image">
+<<<<<<< HEAD
                             <% if (property.coverImagePath) { %>
                                 <img height="150" width="100" src="<%=property.coverImagePath %>">
+=======
+                            <% if (property.coverImageName) { %>
+                                <img height="150" width="100" src="/public/uploads/bookCovers/<%=property.coverImageName%>">
+>>>>>>> 15abca7c7c0a6f5b79a09fc17de918fe738f6225
 
-                             <% } else { %>
+                            <% } else { %>
                                 Book Image Coming Soon...
-                             <% } %>
-                             
-                         </div>
+                            <% } %>
+                            
+                        </div>
                         <div class="title">   
                             Title: <%= property.title %>
                         </div> 
@@ -47,12 +52,12 @@
                             </form>
                             
                         </div>
-                       
-                     </div>
+                    
+                    </div>
                     </div> 
-                 <% }) %>
+                <% }) %>
 
-                 <% } %>
+                <% } %>
             </div>
     </div>
 </body>
