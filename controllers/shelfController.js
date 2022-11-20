@@ -3,13 +3,16 @@ const User = require('../model/Users');
 const path = require('path');
 
 
-
+//adds book to user bookshelf
 const addBookToShelf = async (req, res) => {
 
+    //if user is not logged in return user to login page
     if(!req.session.user) return res.render(path.join(__dirname, '..', 'views', 'login'), {message: "Please Login"} );
 
+    //grab bookId of select book from HTML form
     const {bookId } = req.body;
 
+    //initialize an instance of the book from the Book Database
     const book = await Book.findById(bookId).exec();
     if (!book) {
         return res.status(204).json({ "message": `No book found matching id ${bookId}.` });
@@ -18,25 +21,24 @@ const addBookToShelf = async (req, res) => {
 
     const usernm = req.session.user;
 
-
+    //create an instance of the user to add the new book title to bookshelf
     const user = await User.findOne({username: usernm}).exec();
 
     if (!user) {
         return res.status(204).json({ "message": `No user found matching username ${usernm}.` });
     }
 
-    //console.log(user.bookshelf[bookId]);
-
-    const duplicate = user.bookshelf;
-
+    
     let testValue = false;
     
-    //Find whether book already exists users bookShelf
-    duplicate.forEach((item) => {
+    //Find if book already exists users bookShelf
+    user.bookshelf.forEach((item) => {
 
+        //loop through items to check each value already in user shelf
         for(let key in item){
+            //if the value is found
             if(item[key].toString() == bookId){
-                
+                //set testValue to true
                 testValue = true;
             }
         }
@@ -46,7 +48,8 @@ const addBookToShelf = async (req, res) => {
     if(testValue) return res.render('../views/search.ejs', {message:`Book already exists on ${req.session.user}'s Shelf`});
 
     try{
-        
+    //if the book exists in the Book database add the book
+    //to the user shelf    
     if(book) user.bookshelf.push(book);
 
     const result = await user.save();
