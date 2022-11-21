@@ -1,6 +1,7 @@
 const Book = require('../model/Books');
 const User = require('../model/Users');
 const path = require('path');
+const { default: mongoose } = require('mongoose');
 
 
 
@@ -19,10 +20,8 @@ const addBookToShelf = async (req, res) => {
 
    bookArr.forEach((item) => {
 
-    newBookArr.push(`ObjectId(${item})`);
+    newBookArr.push(mongoose.Types.ObjectId(item));
    })
-
-   console.log(newBookArr);
 
     //initialize an instance of the book from the Book Database
     const book = await Book.findById(bookId).exec();
@@ -61,7 +60,7 @@ const addBookToShelf = async (req, res) => {
 
     
     //if the testValue is true then the book already exists in the users bookshelf
-    if(testValue) return res.render('../views/search.ejs', {message:`Book already exists on ${req.session.user}'s Shelf`});
+    if(testValue) return res.render('../views/search.ejs', {BookResults:bookResults, message:`Book already exists on ${req.session.user}'s Shelf`});
 
     try{
     //if the book exists in the Book database add the book
@@ -71,7 +70,7 @@ const addBookToShelf = async (req, res) => {
     const result = await user.save();
 
    
-    return res.render('../views/search.ejs', {message:`Book Successfully Added to ${req.session.user}'s Shelf`})
+    return res.render('../views/search.ejs', {BookResults: bookResults, message:`Book Successfully Added to ${req.session.user}'s Shelf`})
 
 
     }catch(error){
