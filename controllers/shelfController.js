@@ -3,6 +3,7 @@ const User = require('../model/Users');
 const path = require('path');
 
 
+
 //adds book to user bookshelf
 const addBookToShelf = async (req, res) => {
 
@@ -10,7 +11,18 @@ const addBookToShelf = async (req, res) => {
     if(!req.session.user) return res.render(path.join(__dirname, '..', 'views', 'login'), {message: "Please Login"} );
 
     //grab bookId of select book from HTML form
-    const {bookId } = req.body;
+    const {bookId, bookResult } = req.body;
+
+    const bookArr = bookResult.split(",");
+
+    let newBookArr = [];
+
+   bookArr.forEach((item) => {
+
+    newBookArr.push(`ObjectId(${item})`);
+   })
+
+   console.log(newBookArr);
 
     //initialize an instance of the book from the Book Database
     const book = await Book.findById(bookId).exec();
@@ -44,6 +56,10 @@ const addBookToShelf = async (req, res) => {
         }
         
     });
+
+    const bookResults = await Book.find({"_id" : {"$in" : newBookArr}});
+
+    
     //if the testValue is true then the book already exists in the users bookshelf
     if(testValue) return res.render('../views/search.ejs', {message:`Book already exists on ${req.session.user}'s Shelf`});
 
@@ -96,7 +112,8 @@ const getUserShelf = async (req, res) => {
         
     });
 
-    const bookResult = await Book.find({"_id" : {"$in" : idArr}});
+    console.log(idArr);
+   const bookResult = await Book.find({"_id" : {"$in" : idArr}});
 
 
     res.render('../views/userShelf.ejs', {user: req.session.user, message: " ", BookResults: bookResult});
@@ -146,16 +163,38 @@ const removeFromShelf = async (req, res) => {
     try{
         
         
-        
+        //removes book from 
         user.bookshelf.splice(index,1);
 
     
         const result = await user.save();
-    
+
+
+
+
+//reload shelf without book listed?
+        
+    const userShelf = user.bookshelf;
+
+    let idArr = [];
+
+    userShelf.forEach((item) => {
+
+        for(let key in item){
+            if(key == '_id'){
+
+                idArr.push(item[key]);
+            }
+        }
+        
+    });
+
+
+    const bookResult = await Book.find({"_id" : {"$in" : idArr}});
+
+
+    return res.render('../views/userShelf.ejs', {user: req.session.user, message: "Book Successfully Removed from Shelf ", BookResults: bookResult});
        
-        return res.render('../views/userShelf.ejs', {user:req.session.user, message:`Book Successfully Removed from Shelf`})
-    
-    
         }catch(error){
     
             res.status(500)
