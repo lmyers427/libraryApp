@@ -21,10 +21,10 @@
                     <div class="card_item">  
                     <div class="card_inner">
                         <div class="image">
-                            <% if (property.coverImageName) { %>
-                                <img height="150" width="100" src="/public/uploads/bookCovers/<%=property.coverImageName%>">
+                            <% if (property.coverImagePath) { %>
+                                <img height="150" width="100" src="<%=property.coverImagePath %>">
 
-                            <% } else { %>
+                             <% } else { %>
                                 Book Image Coming Soon...
                             <% } %>
                             
@@ -41,7 +41,7 @@
 
                         <div>
                             <form action = "/userShelf/remove" method= "POST" id = "rmvFav">
-                            <input type="hidden" name="_method" value="delete">
+                            <input type="hidden" name="_method" value="put">
                             <input type="hidden" id="bookId" name="bookId" value=<%=property.id%>>
                             <button type="submit">Remove From Favorites</button>
                             </form>
