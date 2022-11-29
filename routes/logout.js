@@ -8,6 +8,8 @@ router.get('/', (req, res) => {
     res.render(path.join(__dirname, '..', 'views', 'logout'), {message: message}); //updated for ejs
 });
 
+
+//Route Called when user selects Logout Button from Home Page
 router.post('/', logoutController.logOut);
 
 module.exports = router;

@@ -1,3 +1,10 @@
+/**
+ * This Controller interacts with out User collection in MongoDB to create a new user
+ * 
+ */
+
+
+
 const User = require('../model/Users');
 const bcrypt = require('bcrypt');
 const NewUser = async (req, res) => {
@@ -7,21 +14,13 @@ const NewUser = async (req, res) => {
 
     const duplicate = await User.findOne({username: username}).exec();
 
+    //If the user already exists that means that our database already has a registered account 
+    //under that username and the user can attempt to log in using those credentials
     if(duplicate) return res.render('../views/login.ejs', { message: req.session.message = 'Username Already Exists' });
 
     try{
 
-        // //create user
-        // const result = await User.create({
-        //     "username": username,
-        //     "password": password,
-        //     "email": req.body.email,
-        //     "first_name": req.body.fname,
-        //     "last_name": req.body.lname
-
-        // });
-        //test out before posting to Database :)
-
+        // //creates new user
         const newUser = new User();
         newUser.username = username;
         newUser.password = password;

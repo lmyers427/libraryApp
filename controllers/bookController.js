@@ -1,3 +1,16 @@
+/**
+ * The Book Controller is a compilation of functions exported to our 
+ * routes to communcate with our MongoDB collection Books
+ * These various functions will interact with the form data submitted 
+ * by the user currently logged into the application and respond accordingly
+ * 
+ * The create, delete, and update book functions all require Administrative or Editor roles to implement 
+ * and in our Routes the middleware function verifyRoles is utilized to check
+ * our user has these assigned roles before completing an action. 
+ */
+
+
+
 const Book = require('../model/Books');
 const bcrypt = require('bcrypt');
 const removeBookCover = require('../middleware/removeBookCover');

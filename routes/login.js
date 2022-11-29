@@ -9,6 +9,7 @@ router.get('/', (req, res) => {
     
 });
 
+//route called when user submits Login Form
 router.post('/', loginController.ExistingUser);
 
 module.exports = router;

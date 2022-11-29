@@ -1,3 +1,10 @@
+/**
+ * This Controller interacts with our User database collection 
+ * to verify if the individual attempting to log in is an existing user 
+ * or needs to create an account. 
+ * If the user exist a req.session.user variable is created for that user
+ * so our application knows the user is logged in under that username. 
+ */
 const User = require('../model/Users');
 const bcrypt = require('bcrypt');
 const express = require('express');
@@ -9,7 +16,7 @@ const ExistingUser = async (req, res) => {
 
     
 
-    const {username, password} = req.body; //may change depending on HTML
+    const {username, password} = req.body; 
     if(!username || !password) return res.status(400).json({'message':'Username and password required'});
 
     //Fetch existing user from Database 
