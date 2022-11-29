@@ -1,23 +1,23 @@
 const Support = require('../model/Support');
+const User = require('../model/Users');
 
 
 const NewTicket = async (req, res) => {
 
     const {recommend, tech} = req.body; //may change depending on HTML
     
-    //console.log(req.body);
+    const user = await User.find({username: req.session.user}).exec();
+
     
-    if(!recommend || !tech) return res.status(400).json({'message':'Please enter a recommendation or Technical Difficulty'});
-
-    const duplicate = await Support.findOne({recomendation: recommend}).exec();
-
-    if(duplicate) return res.render('../views/home.ejs', { message: req.session.message = 'Book already Recomended' });
+    
+    if(!recommend && !tech) return res.status(400).json({'message':'Please enter a recommendation or Technical Difficulty'});
 
     try{
 
         const newTicket = new Support();
-        newTicket.Recommendation = recommend;
-        newTicket.TechnicalDifficulty = tech;
+        if(recommend) newTicket.Recommendation = recommend;
+        if(tech) newTicket.TechnicalDifficulty = tech;
+        if(user) newTicket.userSubmitted = req.session.user;
         const result = await newTicket.save();
 
         res.render('../views/home.ejs', {user: req.session.user, message: req.session.message = 'Ticket successfully created'});
