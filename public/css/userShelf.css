@@ -1,8 +1,8 @@
 /* Positons and Styles "Search Results" text*/
-h1{
+.header{
     text-align: center;
     color: #fff;
-    padding-top: 1em;
+    padding-top: 2em;
 }
 
 h3{
