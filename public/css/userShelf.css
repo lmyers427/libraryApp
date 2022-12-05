@@ -5,16 +5,11 @@
     padding-top: 2em;
 }
 
-h3{
+h3{ 
     color: rgb(241, 245, 16);
-    inline-size: 200px;
-    white-space: nowrap;
     font-weight: bold;
     text-align: center;
-    position: fixed;
-    top: 5%;
-    left: 50%; 
-    transform: translate(-50%, -50%);
+    padding-top: 2em;
 }
 
 /* Positons and Styles return to homepage link*/
