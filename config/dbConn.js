@@ -1,3 +1,9 @@
+/**
+ * This file is for instantiating the mongoose package to connect
+ * our application's server to the MongoDB database. 
+ * Our .env file includes the DATABASE name and password
+ */
+
 const mongoose = require('mongoose');
 
 const connectDB = async () => {

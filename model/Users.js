@@ -29,12 +29,12 @@ const userSchema = new Schema({
     last_name: {
         type: String
     },
-    //references the books from Model Schema books One to Many 
+    //references the books from Model Schema books One to Many as an array of Objects
     bookshelf :[], 
 
 });
 
-/*The following is Middleware for userSchema to check if password is hashed*/
+/*The following is Built-in Middleware for userSchema to check if password is hashed*/
 
 userSchema.pre('save', function(next){
     let user = this; 
@@ -57,6 +57,7 @@ userSchema.pre('save', function(next){
     });
 });
 
+//Built-in method with User model to compare the hashed password in the database with the current submission from the user
 userSchema.methods.comparePassword = function(candidatePassword) {
     const currentPassword = this.password;
     return new Promise((resolve, reject) => {
@@ -66,5 +67,7 @@ userSchema.methods.comparePassword = function(candidatePassword) {
         });
     })
 };
+
+
 
 module.exports = mongoose.model('User', userSchema);

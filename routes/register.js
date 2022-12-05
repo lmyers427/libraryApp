@@ -8,7 +8,7 @@ router.get('/', (req, res) => {
     res.render(path.join(__dirname, '..', 'views', 'register'), {message: message} ); //ejs updated to render
 });
 
-//Register new user
+//Route Called when user submits form from Register Page
 router.post('/', registerController.NewUser);
 
 

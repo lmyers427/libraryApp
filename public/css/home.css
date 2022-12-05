@@ -7,6 +7,17 @@ h1{
     font-size: 25px;
 }
 
+h3{
+    color: rgb(241, 245, 16);
+    inline-size: 200px;
+    font-weight: bold;
+    text-align: center;
+    position: fixed;
+    top: 17%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
 /* Link Styles */
 a:link{text-decoration: none;}
 a:visited{text-decoration: none;}

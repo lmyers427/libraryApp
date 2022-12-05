@@ -13,7 +13,7 @@ router.get('/', (req, res) => {
     
 });
 
-//Register new support ticket
+//Register new support ticket. Route called when user hits submit button on Support Page
 router.post('/', supportController.NewTicket);
 
 module.exports = router;
