@@ -123,7 +123,9 @@ const deleteBook = async (req, res) => {
     
     //removes bookCover image from public file once deleted 
     removeBookCover(book.coverImageName); 
-    res.json(result);
+    //res.json(result);
+
+    res.render('../views/books.ejs', {message: 'Book Successfully Deleted'});
     
     // for testing
     console.log(book + 'deleted')
@@ -152,7 +154,10 @@ const updateBook = async (req, res) => {
 
     //for testing
 
-    res.json(result + 'updated');
+    //res.json(result + 'updated');
+    
+    res.render('../views/books.ejs', {message: 'Book Successfully Updated'});
+    
 
 
     }catch(error){
