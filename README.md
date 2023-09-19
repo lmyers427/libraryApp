@@ -1,1 +1,1 @@
-# CSCI441ProjectGroup1
+# Library/Bookstore App
