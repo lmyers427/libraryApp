@@ -1,9 +1,18 @@
 /* Bookshelf background (brown box) */
+body{
+
+    background-image: url(../images/backgroundImg.png) ;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
 .bookshelf{
     height: 600px;
     width:400px;
     border-radius: 5px;
     background-color: #967969;
+    opacity: 90%;
     position: fixed;
     top: 50%;
     left: 50%;

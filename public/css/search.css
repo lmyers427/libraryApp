@@ -1,4 +1,11 @@
 /* Positons and Styles "Search Results" text*/
+body{
+
+    background-image: url(../images/backgroundImg.png) ;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 .header{
     text-align: center;
     color: #fff;

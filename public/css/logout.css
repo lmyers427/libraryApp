@@ -1,4 +1,12 @@
 /* Burns and Mobile Text*/
+body{
+
+    background-image: url(../images/backgroundImg.png) ;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
 h1{
     position: fixed;
     top: 15%;
@@ -24,6 +32,7 @@ h3{
     width:400px;
     border-radius: 5px;
     background-color: #967969;
+    opacity: 90%;
     position: fixed;
     top: 50%;
     left: 50%;
